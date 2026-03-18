@@ -10,8 +10,16 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
 import uvicorn
+import sys
+import os
 
-from .morphological_analyzer import MorphologicalAnalyzer
+# Add current directory to path for imports
+sys.path.insert(0, os.path.dirname(__file__))
+
+try:
+    from morphological_analyzer import MorphologicalAnalyzer
+except ImportError:
+    from .morphological_analyzer import MorphologicalAnalyzer
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -145,4 +153,4 @@ async def health_check():
     return {"status": "healthy", "analyzer_ready": True}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8001)

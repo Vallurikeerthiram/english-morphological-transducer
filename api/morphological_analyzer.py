@@ -5,8 +5,18 @@ Main module for morphological analysis using FST rules and Trie validation.
 Provides the core functionality for extracting base words from derived forms.
 """
 
-from .morphological_rules import generate_candidates
-from .trie import Trie
+import sys
+import os
+
+# Add current directory to path for imports
+sys.path.insert(0, os.path.dirname(__file__))
+
+try:
+    from morphological_rules import generate_candidates
+    from trie import Trie
+except ImportError:
+    from .morphological_rules import generate_candidates
+    from .trie import Trie
 
 class MorphologicalAnalyzer:
     """Main morphological analysis engine"""
