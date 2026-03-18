@@ -1,0 +1,2 @@
+cd "C:\Users\keert\OneDrive - Amrita vishwa vidyapeetham\Sem 6 Proj\Compiler Design\main\project"
+python -m http.server 8181
