@@ -41,9 +41,10 @@ This project provides a **practical morphological analyzer** that:
 
 ### Technical Innovations
 - **Hybrid FST-Trie Approach**: Combines rule-based FST with dictionary validation
-- **Real-Time Web Interface**: Interactive analysis with immediate visual feedback
+- **Web Interface**: Interactive analysis with immediate visual feedback
 - **Graph Visualization**: See morphological transformation paths
 - **Dual Analysis Modes**: Default dictionary vs. custom dictionary analysis
+- **REST API**: Programmatic access via FastAPI-based REST endpoints
 
 ### Educational Value
 - **Complete Documentation**: Every rule is documented with examples
@@ -110,12 +111,59 @@ cd english-morphological-transducer/project
 2. Rule `ing → ''` with silent-e: `runing` → `run` (valid!)
 3. **Result**: Base word = `run`
 
-## 🏗️ Project Structure
+## � REST API
+
+For programmatic access, this project includes a complete REST API built with FastAPI.
+
+### Quick API Start
+
+```bash
+cd api
+pip install -r requirements.txt
+python api.py
+```
+
+**API Endpoints:**
+- `GET /analyze?word=running` - Analyze single word
+- `POST /analyze/batch` - Analyze multiple words
+- `GET /dictionary` - Get dictionary info
+- `POST /dictionary/update` - Add custom words
+
+**Interactive Documentation:** `http://localhost:8000/docs`
+
+### API Example
+
+```bash
+# Analyze a word
+curl "http://localhost:8000/analyze?word=running"
+
+# Response
+{
+  "input_word": "running",
+  "base_word": "run",
+  "rule_applied": "ing -> '' + Undouble",
+  "found_in_dictionary": true,
+  "candidates_checked": 8,
+  "dictionary_size": 370105
+}
+```
+
+See `api/README.md` for complete API documentation.
+
+## �🏗️ Project Structure
 
 ```
 main/
 ├── ENGLISH_MORPHOLOGY_RULE_NOTE.md    # Complete rule documentation (101 rules)
 ├── README.md                          # This file
+├── api/                               # REST API for morphological analysis
+│   ├── __init__.py
+│   ├── api.py                         # FastAPI application
+│   ├── morphological_analyzer.py      # Core analysis engine
+│   ├── morphological_rules.py         # FST rules implementation
+│   ├── trie.py                        # Trie data structure
+│   ├── requirements.txt               # Python dependencies
+│   └── README.md                      # API documentation
 └── project/
     ├── index.html                     # Main web interface
     ├── script.js                      # Morphological analysis engine
