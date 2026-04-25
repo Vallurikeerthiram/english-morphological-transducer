@@ -1,0 +1,1113 @@
+[
+  {
+    "priority": 1,
+    "rule": "iness_to_y",
+    "suffix": "iness",
+    "replacement": "y",
+    "description": "Reverse iness to y.",
+    "examples": [
+      "happiness->happy",
+      "airiness->airy"
+    ]
+  },
+  {
+    "priority": 2,
+    "rule": "iest_to_y",
+    "suffix": "iest",
+    "replacement": "y",
+    "description": "Reverse iest to y.",
+    "examples": [
+      "happiest->happy",
+      "easiest->easy"
+    ]
+  },
+  {
+    "priority": 3,
+    "rule": "ier_to_y",
+    "suffix": "ier",
+    "replacement": "y",
+    "description": "Reverse ier to y.",
+    "examples": [
+      "happier->happy",
+      "earlier->early"
+    ]
+  },
+  {
+    "priority": 4,
+    "rule": "ied_to_ie",
+    "suffix": "ied",
+    "replacement": "ie",
+    "description": "Reverse ied to ie.",
+    "examples": [
+      "tied->tie",
+      "untied->untie"
+    ]
+  },
+  {
+    "priority": 5,
+    "rule": "ied_to_y",
+    "suffix": "ied",
+    "replacement": "y",
+    "description": "Reverse ied to y.",
+    "examples": [
+      "studied->study",
+      "tried->try"
+    ]
+  },
+  {
+    "priority": 6,
+    "rule": "ies_to_ie",
+    "suffix": "ies",
+    "replacement": "ie",
+    "description": "Reverse ies to ie.",
+    "examples": [
+      "ties->tie",
+      "unties->untie"
+    ]
+  },
+  {
+    "priority": 7,
+    "rule": "ies_to_y",
+    "suffix": "ies",
+    "replacement": "y",
+    "description": "Reverse ies to y.",
+    "examples": [
+      "studies->study",
+      "tries->try"
+    ]
+  },
+  {
+    "priority": 8,
+    "rule": "ily_to_y",
+    "suffix": "ily",
+    "replacement": "y",
+    "description": "Reverse ily to y.",
+    "examples": [
+      "easily->easy",
+      "happily->happy"
+    ]
+  },
+  {
+    "priority": 9,
+    "rule": "ying_to_ie",
+    "suffix": "ying",
+    "replacement": "ie",
+    "description": "Reverse ying to ie.",
+    "examples": [
+      "tying->tie",
+      "dying->die"
+    ]
+  },
+  {
+    "priority": 10,
+    "rule": "king_to_c",
+    "suffix": "cking",
+    "replacement": "c",
+    "description": "Reverse c->ck before ing.",
+    "examples": [
+      "panicking->panic",
+      "mimicking->mimic"
+    ]
+  },
+  {
+    "priority": 11,
+    "rule": "ing_undouble",
+    "suffix": "ing",
+    "replacement": "undouble consonant",
+    "description": "Reverse doubled-consonant ing.",
+    "examples": [
+      "running->run",
+      "stopping->stop"
+    ]
+  },
+  {
+    "priority": 12,
+    "rule": "ing_add_e",
+    "suffix": "ing",
+    "replacement": "+e",
+    "description": "Restore final e after ing.",
+    "examples": [
+      "making->make",
+      "driving->drive"
+    ]
+  },
+  {
+    "priority": 13,
+    "rule": "ing_strip",
+    "suffix": "ing",
+    "replacement": "",
+    "description": "Plain ing removal.",
+    "examples": [
+      "jumping->jump",
+      "reading->read"
+    ]
+  },
+  {
+    "priority": 14,
+    "rule": "ked_to_c",
+    "suffix": "cked",
+    "replacement": "c",
+    "description": "Reverse c->ck before ed.",
+    "examples": [
+      "panicked->panic",
+      "frolicked->frolic"
+    ]
+  },
+  {
+    "priority": 15,
+    "rule": "ed_undouble",
+    "suffix": "ed",
+    "replacement": "undouble consonant",
+    "description": "Reverse doubled-consonant ed.",
+    "examples": [
+      "stopped->stop",
+      "planned->plan"
+    ]
+  },
+  {
+    "priority": 16,
+    "rule": "ed_add_e",
+    "suffix": "ed",
+    "replacement": "+e",
+    "description": "Restore final e after ed.",
+    "examples": [
+      "loved->love",
+      "baked->bake"
+    ]
+  },
+  {
+    "priority": 17,
+    "rule": "ed_strip",
+    "suffix": "ed",
+    "replacement": "",
+    "description": "Plain ed removal.",
+    "examples": [
+      "marked->mark",
+      "called->call"
+    ]
+  },
+  {
+    "priority": 18,
+    "rule": "ker_to_c",
+    "suffix": "cker",
+    "replacement": "c",
+    "description": "Reverse c->ck before er.",
+    "examples": [
+      "panicker->panic",
+      "mimicker->mimic"
+    ]
+  },
+  {
+    "priority": 19,
+    "rule": "er_undouble",
+    "suffix": "er",
+    "replacement": "undouble consonant",
+    "description": "Reverse doubled-consonant er.",
+    "examples": [
+      "runner->run",
+      "bigger->big"
+    ]
+  },
+  {
+    "priority": 20,
+    "rule": "er_add_e",
+    "suffix": "er",
+    "replacement": "+e",
+    "description": "Restore final e after er.",
+    "examples": [
+      "closer->close",
+      "admirer->admire"
+    ]
+  },
+  {
+    "priority": 21,
+    "rule": "er_strip",
+    "suffix": "er",
+    "replacement": "",
+    "description": "Plain er removal.",
+    "examples": [
+      "player->play",
+      "teacher->teach"
+    ]
+  },
+  {
+    "priority": 22,
+    "rule": "est_undouble",
+    "suffix": "est",
+    "replacement": "undouble consonant",
+    "description": "Reverse doubled-consonant est.",
+    "examples": [
+      "biggest->big",
+      "fattest->fat"
+    ]
+  },
+  {
+    "priority": 23,
+    "rule": "est_add_e",
+    "suffix": "est",
+    "replacement": "+e",
+    "description": "Restore final e after est.",
+    "examples": [
+      "nicest->nice",
+      "largest->large"
+    ]
+  },
+  {
+    "priority": 24,
+    "rule": "est_strip",
+    "suffix": "est",
+    "replacement": "",
+    "description": "Plain est removal.",
+    "examples": [
+      "darkest->dark",
+      "fastest->fast"
+    ]
+  },
+  {
+    "priority": 25,
+    "rule": "ves_to_f",
+    "suffix": "ves",
+    "replacement": "f",
+    "description": "Reverse ves to f.",
+    "examples": [
+      "wolves->wolf",
+      "leaves->leaf"
+    ]
+  },
+  {
+    "priority": 26,
+    "rule": "ves_to_fe",
+    "suffix": "ves",
+    "replacement": "fe",
+    "description": "Reverse ves to fe.",
+    "examples": [
+      "knives->knife",
+      "wives->wife"
+    ]
+  },
+  {
+    "priority": 27,
+    "rule": "men_to_man",
+    "suffix": "men",
+    "replacement": "man",
+    "description": "Reverse men to man.",
+    "examples": [
+      "firemen->fireman",
+      "policemen->policeman"
+    ]
+  },
+  {
+    "priority": 28,
+    "rule": "ses_to_sis",
+    "suffix": "ses",
+    "replacement": "sis",
+    "description": "Reverse ses to sis.",
+    "examples": [
+      "analyses->analysis",
+      "crises->crisis"
+    ]
+  },
+  {
+    "priority": 29,
+    "rule": "ices_to_ex",
+    "suffix": "ices",
+    "replacement": "ex",
+    "description": "Reverse ices to ex.",
+    "examples": [
+      "indices->index",
+      "vertices->vertex"
+    ]
+  },
+  {
+    "priority": 30,
+    "rule": "ices_to_ix",
+    "suffix": "ices",
+    "replacement": "ix",
+    "description": "Reverse ices to ix.",
+    "examples": [
+      "appendices->appendix",
+      "matrices->matrix"
+    ]
+  },
+  {
+    "priority": 31,
+    "rule": "i_to_us",
+    "suffix": "i",
+    "replacement": "us",
+    "description": "Reverse i to us.",
+    "examples": [
+      "cacti->cactus",
+      "stimuli->stimulus"
+    ]
+  },
+  {
+    "priority": 32,
+    "rule": "a_to_um",
+    "suffix": "a",
+    "replacement": "um",
+    "description": "Reverse a to um.",
+    "examples": [
+      "data->datum",
+      "bacteria->bacterium"
+    ]
+  },
+  {
+    "priority": 33,
+    "rule": "a_to_on",
+    "suffix": "a",
+    "replacement": "on",
+    "description": "Reverse a to on.",
+    "examples": [
+      "phenomena->phenomenon",
+      "criteria->criterion"
+    ]
+  },
+  {
+    "priority": 34,
+    "rule": "ae_to_a",
+    "suffix": "ae",
+    "replacement": "a",
+    "description": "Reverse ae to a.",
+    "examples": [
+      "formulae->formula",
+      "larvae->larva"
+    ]
+  },
+  {
+    "priority": 35,
+    "rule": "ability_to_able",
+    "suffix": "ability",
+    "replacement": "able",
+    "description": "Reverse ability to able.",
+    "examples": [
+      "ability->able",
+      "adaptability->adaptable"
+    ]
+  },
+  {
+    "priority": 36,
+    "rule": "ibility_to_ible",
+    "suffix": "ibility",
+    "replacement": "ible",
+    "description": "Reverse ibility to ible.",
+    "examples": [
+      "possibility->possible",
+      "flexibility->flexible"
+    ]
+  },
+  {
+    "priority": 37,
+    "rule": "ity_to_e",
+    "suffix": "ity",
+    "replacement": "e",
+    "description": "Reverse ity to e.",
+    "examples": [
+      "activity->active",
+      "sensitivity->sensitive"
+    ]
+  },
+  {
+    "priority": 38,
+    "rule": "ity_strip",
+    "suffix": "ity",
+    "replacement": "",
+    "description": "Plain ity removal when valid.",
+    "examples": [
+      "fecundity->fecund",
+      "morbidity->morbid"
+    ]
+  },
+  {
+    "priority": 39,
+    "rule": "ization_to_ize",
+    "suffix": "ization",
+    "replacement": "ize",
+    "description": "Reverse ization to ize.",
+    "examples": [
+      "realization->realize",
+      "organization->organize"
+    ]
+  },
+  {
+    "priority": 40,
+    "rule": "isation_to_ise",
+    "suffix": "isation",
+    "replacement": "ise",
+    "description": "Reverse isation to ise.",
+    "examples": [
+      "organisation->organise",
+      "civilisation->civilise"
+    ]
+  },
+  {
+    "priority": 41,
+    "rule": "ized_to_ize",
+    "suffix": "ized",
+    "replacement": "ize",
+    "description": "Reverse ized to ize.",
+    "examples": [
+      "realized->realize",
+      "organized->organize"
+    ]
+  },
+  {
+    "priority": 42,
+    "rule": "ised_to_ise",
+    "suffix": "ised",
+    "replacement": "ise",
+    "description": "Reverse ised to ise.",
+    "examples": [
+      "organised->organise",
+      "civilised->civilise"
+    ]
+  },
+  {
+    "priority": 43,
+    "rule": "izing_to_ize",
+    "suffix": "izing",
+    "replacement": "ize",
+    "description": "Reverse izing to ize.",
+    "examples": [
+      "realizing->realize",
+      "organizing->organize"
+    ]
+  },
+  {
+    "priority": 44,
+    "rule": "ising_to_ise",
+    "suffix": "ising",
+    "replacement": "ise",
+    "description": "Reverse ising to ise.",
+    "examples": [
+      "organising->organise",
+      "civilising->civilise"
+    ]
+  },
+  {
+    "priority": 45,
+    "rule": "izer_to_ize",
+    "suffix": "izer",
+    "replacement": "ize",
+    "description": "Reverse izer to ize.",
+    "examples": [
+      "organizer->organize",
+      "realizer->realize"
+    ]
+  },
+  {
+    "priority": 46,
+    "rule": "iser_to_ise",
+    "suffix": "iser",
+    "replacement": "ise",
+    "description": "Reverse iser to ise.",
+    "examples": [
+      "organiser->organise",
+      "advertiser->advertise"
+    ]
+  },
+  {
+    "priority": 47,
+    "rule": "ation_to_ate",
+    "suffix": "ation",
+    "replacement": "ate",
+    "description": "Reverse ation to ate.",
+    "examples": [
+      "activation->activate",
+      "creation->create"
+    ]
+  },
+  {
+    "priority": 48,
+    "rule": "ness_strip",
+    "suffix": "ness",
+    "replacement": "",
+    "description": "Remove ness.",
+    "examples": [
+      "kindness->kind",
+      "sadness->sad"
+    ]
+  },
+  {
+    "priority": 49,
+    "rule": "ment_strip",
+    "suffix": "ment",
+    "replacement": "",
+    "description": "Remove ment.",
+    "examples": [
+      "development->develop",
+      "agreement->agree"
+    ]
+  },
+  {
+    "priority": 50,
+    "rule": "ship_strip",
+    "suffix": "ship",
+    "replacement": "",
+    "description": "Remove ship.",
+    "examples": [
+      "friendship->friend",
+      "leadership->leader"
+    ]
+  },
+  {
+    "priority": 51,
+    "rule": "hood_strip",
+    "suffix": "hood",
+    "replacement": "",
+    "description": "Remove hood.",
+    "examples": [
+      "childhood->child",
+      "brotherhood->brother"
+    ]
+  },
+  {
+    "priority": 52,
+    "rule": "dom_strip",
+    "suffix": "dom",
+    "replacement": "",
+    "description": "Remove dom.",
+    "examples": [
+      "freedom->free",
+      "kingdom->king"
+    ]
+  },
+  {
+    "priority": 53,
+    "rule": "ful_strip",
+    "suffix": "ful",
+    "replacement": "",
+    "description": "Remove ful.",
+    "examples": [
+      "hopeful->hope",
+      "careful->care"
+    ]
+  },
+  {
+    "priority": 54,
+    "rule": "less_strip",
+    "suffix": "less",
+    "replacement": "",
+    "description": "Remove less.",
+    "examples": [
+      "hopeless->hope",
+      "careless->care"
+    ]
+  },
+  {
+    "priority": 55,
+    "rule": "ical_to_ic",
+    "suffix": "ical",
+    "replacement": "ic",
+    "description": "Reverse ical to ic.",
+    "examples": [
+      "logical->logic",
+      "magical->magic"
+    ]
+  },
+  {
+    "priority": 56,
+    "rule": "ably_to_able",
+    "suffix": "ably",
+    "replacement": "able",
+    "description": "Reverse ably to able.",
+    "examples": [
+      "notably->notable",
+      "comfortably->comfortable"
+    ]
+  },
+  {
+    "priority": 57,
+    "rule": "ibly_to_ible",
+    "suffix": "ibly",
+    "replacement": "ible",
+    "description": "Reverse ibly to ible.",
+    "examples": [
+      "possibly->possible",
+      "visibly->visible"
+    ]
+  },
+  {
+    "priority": 58,
+    "rule": "eaux_to_eau",
+    "suffix": "eaux",
+    "replacement": "eau",
+    "description": "Reverse eaux to eau.",
+    "examples": [
+      "tableaux->tableau",
+      "bureaux->bureau"
+    ]
+  },
+  {
+    "priority": 59,
+    "rule": "icity_to_ic",
+    "suffix": "icity",
+    "replacement": "ic",
+    "description": "Reverse icity to ic.",
+    "examples": [
+      "electricity->electric",
+      "authenticity->authentic"
+    ]
+  },
+  {
+    "priority": 60,
+    "rule": "osity_to_ous",
+    "suffix": "osity",
+    "replacement": "ous",
+    "description": "Reverse osity to ous.",
+    "examples": [
+      "curiosity->curious",
+      "generosity->generous"
+    ]
+  },
+  {
+    "priority": 61,
+    "rule": "ality_to_al",
+    "suffix": "ality",
+    "replacement": "al",
+    "description": "Reverse ality to al.",
+    "examples": [
+      "normality->normal",
+      "formality->formal"
+    ]
+  },
+  {
+    "priority": 62,
+    "rule": "ivity_to_ive",
+    "suffix": "ivity",
+    "replacement": "ive",
+    "description": "Reverse ivity to ive.",
+    "examples": [
+      "productivity->productive",
+      "creativity->creative"
+    ]
+  },
+  {
+    "priority": 63,
+    "rule": "ousness_to_ous",
+    "suffix": "ousness",
+    "replacement": "ous",
+    "description": "Reverse ousness to ous.",
+    "examples": [
+      "graciousness->gracious",
+      "seriousness->serious"
+    ]
+  },
+  {
+    "priority": 64,
+    "rule": "fulness_to_ful",
+    "suffix": "fulness",
+    "replacement": "ful",
+    "description": "Reverse fulness to ful.",
+    "examples": [
+      "helpfulness->helpful",
+      "carefulness->careful"
+    ]
+  },
+  {
+    "priority": 65,
+    "rule": "lessness_to_less",
+    "suffix": "lessness",
+    "replacement": "less",
+    "description": "Reverse lessness to less.",
+    "examples": [
+      "carelessness->careless",
+      "hopelessness->hopeless"
+    ]
+  },
+  {
+    "priority": 66,
+    "rule": "ance_strip",
+    "suffix": "ance",
+    "replacement": "",
+    "description": "Remove ance.",
+    "examples": [
+      "performance->perform",
+      "attendance->attend"
+    ]
+  },
+  {
+    "priority": 67,
+    "rule": "ence_strip",
+    "suffix": "ence",
+    "replacement": "",
+    "description": "Remove ence.",
+    "examples": [
+      "existence->exist",
+      "difference->differ"
+    ]
+  },
+  {
+    "priority": 68,
+    "rule": "ism_strip",
+    "suffix": "ism",
+    "replacement": "",
+    "description": "Remove ism.",
+    "examples": [
+      "realism->real",
+      "idealism->ideal"
+    ]
+  },
+  {
+    "priority": 69,
+    "rule": "ist_strip",
+    "suffix": "ist",
+    "replacement": "",
+    "description": "Remove ist.",
+    "examples": [
+      "artist->art",
+      "novelist->novel"
+    ]
+  },
+  {
+    "priority": 70,
+    "rule": "age_strip",
+    "suffix": "age",
+    "replacement": "",
+    "description": "Remove age.",
+    "examples": [
+      "postage->post",
+      "breakage->break"
+    ]
+  },
+  {
+    "priority": 71,
+    "rule": "ee_strip",
+    "suffix": "ee",
+    "replacement": "",
+    "description": "Remove ee.",
+    "examples": [
+      "employee->employ",
+      "escapee->escape"
+    ]
+  },
+  {
+    "priority": 72,
+    "rule": "or_strip",
+    "suffix": "or",
+    "replacement": "",
+    "description": "Remove or.",
+    "examples": [
+      "actor->act",
+      "sailor->sail"
+    ]
+  },
+  {
+    "priority": 73,
+    "rule": "ster_strip",
+    "suffix": "ster",
+    "replacement": "",
+    "description": "Remove ster.",
+    "examples": [
+      "youngster->young",
+      "songster->song"
+    ]
+  },
+  {
+    "priority": 74,
+    "rule": "ling_strip",
+    "suffix": "ling",
+    "replacement": "",
+    "description": "Remove ling.",
+    "examples": [
+      "duckling->duck",
+      "gosling->goose"
+    ]
+  },
+  {
+    "priority": 75,
+    "rule": "let_strip",
+    "suffix": "let",
+    "replacement": "",
+    "description": "Remove let.",
+    "examples": [
+      "booklet->book",
+      "leaflet->leaf"
+    ]
+  },
+  {
+    "priority": 76,
+    "rule": "en_strip",
+    "suffix": "en",
+    "replacement": "",
+    "description": "Remove en.",
+    "examples": [
+      "wooden->wood",
+      "golden->gold"
+    ]
+  },
+  {
+    "priority": 77,
+    "rule": "ward_strip",
+    "suffix": "ward",
+    "replacement": "",
+    "description": "Remove ward.",
+    "examples": [
+      "homeward->home",
+      "eastward->east"
+    ]
+  },
+  {
+    "priority": 78,
+    "rule": "wise_strip",
+    "suffix": "wise",
+    "replacement": "",
+    "description": "Remove wise.",
+    "examples": [
+      "clockwise->clock",
+      "moneywise->money"
+    ]
+  },
+  {
+    "priority": 79,
+    "rule": "ically_to_ical",
+    "suffix": "ically",
+    "replacement": "ical",
+    "description": "Reverse ically to ical.",
+    "examples": [
+      "magically->magical",
+      "logically->logical"
+    ]
+  },
+  {
+    "priority": 80,
+    "rule": "ally_to_al",
+    "suffix": "ally",
+    "replacement": "al",
+    "description": "Reverse ally to al.",
+    "examples": [
+      "formally->formal",
+      "accidentally->accidental"
+    ]
+  },
+  {
+    "priority": 81,
+    "rule": "ally_to_ic",
+    "suffix": "ally",
+    "replacement": "ic",
+    "description": "Reverse ally to ic.",
+    "examples": [
+      "basically->basic",
+      "logically->logic"
+    ]
+  },
+  {
+    "priority": 82,
+    "rule": "able_add_e",
+    "suffix": "able",
+    "replacement": "+e",
+    "description": "Restore final e after able.",
+    "examples": [
+      "lovable->love",
+      "blamable->blame"
+    ]
+  },
+  {
+    "priority": 83,
+    "rule": "able_strip",
+    "suffix": "able",
+    "replacement": "",
+    "description": "Remove able.",
+    "examples": [
+      "readable->read",
+      "adaptable->adapt"
+    ]
+  },
+  {
+    "priority": 84,
+    "rule": "ible_strip",
+    "suffix": "ible",
+    "replacement": "",
+    "description": "Remove ible.",
+    "examples": [
+      "accessible->access",
+      "digestible->digest"
+    ]
+  },
+  {
+    "priority": 85,
+    "rule": "ion_strip",
+    "suffix": "ion",
+    "replacement": "",
+    "description": "Remove ion when valid.",
+    "examples": [
+      "adoption->adopt",
+      "action->act"
+    ]
+  },
+  {
+    "priority": 86,
+    "rule": "tion_to_t",
+    "suffix": "tion",
+    "replacement": "t",
+    "description": "Reverse tion to t.",
+    "examples": [
+      "action->act",
+      "adoption->adopt"
+    ]
+  },
+  {
+    "priority": 87,
+    "rule": "tion_to_te",
+    "suffix": "tion",
+    "replacement": "te",
+    "description": "Reverse tion to te.",
+    "examples": [
+      "relation->relate",
+      "deletion->delete"
+    ]
+  },
+  {
+    "priority": 88,
+    "rule": "sion_to_se",
+    "suffix": "sion",
+    "replacement": "se",
+    "description": "Reverse sion to se.",
+    "examples": [
+      "revision->revise",
+      "explosion->explode?"
+    ]
+  },
+  {
+    "priority": 89,
+    "rule": "sion_to_de",
+    "suffix": "sion",
+    "replacement": "de",
+    "description": "Reverse sion to de.",
+    "examples": [
+      "decision->decide",
+      "division->divide"
+    ]
+  },
+  {
+    "priority": 90,
+    "rule": "al_strip",
+    "suffix": "al",
+    "replacement": "",
+    "description": "Remove al.",
+    "examples": [
+      "national->nation",
+      "formal->form"
+    ]
+  },
+  {
+    "priority": 91,
+    "rule": "ic_strip",
+    "suffix": "ic",
+    "replacement": "",
+    "description": "Remove ic.",
+    "examples": [
+      "heroic->hero",
+      "atomic->atom"
+    ]
+  },
+  {
+    "priority": 92,
+    "rule": "ous_strip",
+    "suffix": "ous",
+    "replacement": "",
+    "description": "Remove ous.",
+    "examples": [
+      "dangerous->danger",
+      "poisonous->poison"
+    ]
+  },
+  {
+    "priority": 93,
+    "rule": "ious_to_y",
+    "suffix": "ious",
+    "replacement": "y",
+    "description": "Reverse ious to y.",
+    "examples": [
+      "mysterious->mystery",
+      "injurious->injury"
+    ]
+  },
+  {
+    "priority": 94,
+    "rule": "eous_to_e",
+    "suffix": "eous",
+    "replacement": "e",
+    "description": "Reverse eous to e.",
+    "examples": [
+      "advantageous->advantage",
+      "outrageous->outrage"
+    ]
+  },
+  {
+    "priority": 95,
+    "rule": "ary_strip",
+    "suffix": "ary",
+    "replacement": "",
+    "description": "Remove ary.",
+    "examples": [
+      "planetary->planet",
+      "imaginary->imagine?"
+    ]
+  },
+  {
+    "priority": 96,
+    "rule": "ant_strip",
+    "suffix": "ant",
+    "replacement": "",
+    "description": "Remove ant.",
+    "examples": [
+      "assistant->assist",
+      "claimant->claim"
+    ]
+  },
+  {
+    "priority": 97,
+    "rule": "ent_strip",
+    "suffix": "ent",
+    "replacement": "",
+    "description": "Remove ent.",
+    "examples": [
+      "dependent->depend",
+      "resident->reside"
+    ]
+  },
+  {
+    "priority": 98,
+    "rule": "ly_strip",
+    "suffix": "ly",
+    "replacement": "",
+    "description": "Remove ly.",
+    "examples": [
+      "quickly->quick",
+      "calmly->calm"
+    ]
+  },
+  {
+    "priority": 99,
+    "rule": "es_strip",
+    "suffix": "es",
+    "replacement": "",
+    "description": "Remove es when valid.",
+    "examples": [
+      "wishes->wish",
+      "goes->go"
+    ]
+  },
+  {
+    "priority": 100,
+    "rule": "s_strip",
+    "suffix": "s",
+    "replacement": "",
+    "description": "Remove s when valid.",
+    "examples": [
+      "runs->run",
+      "cats->cat"
+    ]
+  },
+  {
+    "priority": 101,
+    "rule": "identity",
+    "suffix": "",
+    "replacement": "",
+    "description": "Keep the word unchanged.",
+    "examples": [
+      "run->run",
+      "happy->happy"
+    ]
+  }
+]

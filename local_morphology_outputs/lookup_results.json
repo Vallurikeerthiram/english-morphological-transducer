@@ -1,0 +1,152 @@
+[
+  {
+    "word": "happier",
+    "final_base": "happy",
+    "rule_chain": [
+      "ier_to_y"
+    ],
+    "path": [
+      "happier->happy"
+    ],
+    "base_definitions": [
+      "eagerly disposed to act or to be of service",
+      "enjoying or showing or marked by joy or pleasure",
+      "marked by good fortune",
+      "well expressed and to the point"
+    ]
+  },
+  {
+    "word": "happiest",
+    "final_base": "happy",
+    "rule_chain": [
+      "iest_to_y"
+    ],
+    "path": [
+      "happiest->happy"
+    ],
+    "base_definitions": [
+      "eagerly disposed to act or to be of service",
+      "enjoying or showing or marked by joy or pleasure",
+      "marked by good fortune",
+      "well expressed and to the point"
+    ]
+  },
+  {
+    "word": "studies",
+    "final_base": "study",
+    "rule_chain": [
+      "ies_to_y"
+    ],
+    "path": [
+      "studies->study"
+    ],
+    "base_definitions": [
+      "a branch of knowledge",
+      "a composition intended to develop one aspect of the performer's technique",
+      "a detailed critical inspection",
+      "a room used for reading and writing and studying",
+      "a state of deep mental absorption"
+    ]
+  },
+  {
+    "word": "happiness",
+    "final_base": "happy",
+    "rule_chain": [
+      "iness_to_y"
+    ],
+    "path": [
+      "happiness->happy"
+    ],
+    "base_definitions": [
+      "eagerly disposed to act or to be of service",
+      "enjoying or showing or marked by joy or pleasure",
+      "marked by good fortune",
+      "well expressed and to the point"
+    ]
+  },
+  {
+    "word": "running",
+    "final_base": "run",
+    "rule_chain": [
+      "ing_undouble"
+    ],
+    "path": [
+      "running->run"
+    ],
+    "base_definitions": [
+      "(American football) a play in which a player attempts to carry the ball through or past the opposing team",
+      "a race between candidates for elective office",
+      "a race run on foot",
+      "a regular trip",
+      "a row of unravelled stitches"
+    ]
+  },
+  {
+    "word": "runner",
+    "final_base": "run",
+    "rule_chain": [
+      "er_undouble"
+    ],
+    "path": [
+      "runner->run"
+    ],
+    "base_definitions": [
+      "(American football) a play in which a player attempts to carry the ball through or past the opposing team",
+      "a race between candidates for elective office",
+      "a race run on foot",
+      "a regular trip",
+      "a row of unravelled stitches"
+    ]
+  },
+  {
+    "word": "stopped",
+    "final_base": "stop",
+    "rule_chain": [
+      "ed_undouble"
+    ],
+    "path": [
+      "stopped->stop"
+    ],
+    "base_definitions": [
+      "(music) a knob on an organ that is pulled to change the sound quality from the organ pipes",
+      "a brief stay in the course of a journey",
+      "a consonant produced by stopping the flow of air at some point and suddenly releasing it",
+      "a mechanical device in a camera that controls size of aperture of the lens",
+      "a punctuation mark (.) placed at the end of a declarative sentence to indicate a full stop or after abbreviations"
+    ]
+  },
+  {
+    "word": "making",
+    "final_base": "make",
+    "rule_chain": [
+      "ing_add_e"
+    ],
+    "path": [
+      "making->make"
+    ],
+    "base_definitions": [
+      "a recognizable kind",
+      "achieve a point or goal",
+      "act in a certain way so as to acquire",
+      "add up to",
+      "amount to"
+    ]
+  },
+  {
+    "word": "easily",
+    "final_base": "easy",
+    "rule_chain": [
+      "ily_to_y"
+    ],
+    "path": [
+      "easily->easy"
+    ],
+    "base_definitions": [
+      "affording comfort",
+      "affording pleasure",
+      "casual and unrestrained in sexual behavior",
+      "free from worry or anxiety",
+      "having little impact"
+    ]
+  }
+]

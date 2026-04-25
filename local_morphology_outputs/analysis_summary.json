@@ -1,0 +1,332 @@
+{
+  "lexicon_size": 77477,
+  "group_count": 65179,
+  "top_selected_rules": [
+    [
+      "identity",
+      65179
+    ],
+    [
+      "ly_strip",
+      2419
+    ],
+    [
+      "ness_strip",
+      1578
+    ],
+    [
+      "ing_strip",
+      1251
+    ],
+    [
+      "er_strip",
+      1227
+    ],
+    [
+      "ed_strip",
+      1011
+    ],
+    [
+      "ed_add_e",
+      995
+    ],
+    [
+      "er_add_e",
+      797
+    ],
+    [
+      "ing_add_e",
+      765
+    ],
+    [
+      "s_strip",
+      728
+    ],
+    [
+      "iness_to_y",
+      399
+    ],
+    [
+      "er_undouble",
+      272
+    ],
+    [
+      "ily_to_y",
+      224
+    ],
+    [
+      "ing_undouble",
+      208
+    ],
+    [
+      "ed_undouble",
+      145
+    ]
+  ],
+  "top_valid_candidate_rules": [
+    [
+      "ly_strip",
+      2423
+    ],
+    [
+      "ness_strip",
+      1583
+    ],
+    [
+      "ing_strip",
+      1376
+    ],
+    [
+      "er_strip",
+      1337
+    ],
+    [
+      "ed_strip",
+      1096
+    ],
+    [
+      "ed_add_e",
+      995
+    ],
+    [
+      "er_add_e",
+      798
+    ],
+    [
+      "ing_add_e",
+      765
+    ],
+    [
+      "s_strip",
+      747
+    ],
+    [
+      "iness_to_y",
+      399
+    ],
+    [
+      "er_undouble",
+      279
+    ],
+    [
+      "ily_to_y",
+      224
+    ],
+    [
+      "ing_undouble",
+      214
+    ],
+    [
+      "ed_undouble",
+      146
+    ],
+    [
+      "ied_to_y",
+      97
+    ]
+  ],
+  "sample_resolutions": [
+    {
+      "word": "happiness",
+      "final_base": "happy",
+      "rule_chain": [
+        "iness_to_y"
+      ],
+      "path": [
+        "happiness->happy"
+      ]
+    },
+    {
+      "word": "running",
+      "final_base": "run",
+      "rule_chain": [
+        "ing_undouble"
+      ],
+      "path": [
+        "running->run"
+      ]
+    },
+    {
+      "word": "runner",
+      "final_base": "run",
+      "rule_chain": [
+        "er_undouble"
+      ],
+      "path": [
+        "runner->run"
+      ]
+    },
+    {
+      "word": "stopped",
+      "final_base": "stop",
+      "rule_chain": [
+        "ed_undouble"
+      ],
+      "path": [
+        "stopped->stop"
+      ]
+    },
+    {
+      "word": "making",
+      "final_base": "make",
+      "rule_chain": [
+        "ing_add_e"
+      ],
+      "path": [
+        "making->make"
+      ]
+    },
+    {
+      "word": "easily",
+      "final_base": "easy",
+      "rule_chain": [
+        "ily_to_y"
+      ],
+      "path": [
+        "easily->easy"
+      ]
+    }
+  ],
+  "preview_groups": [
+    {
+      "base": "aa",
+      "size": 1,
+      "words": [
+        "aa"
+      ]
+    },
+    {
+      "base": "aaa",
+      "size": 1,
+      "words": [
+        "aaa"
+      ]
+    },
+    {
+      "base": "aachen",
+      "size": 1,
+      "words": [
+        "aachen"
+      ]
+    },
+    {
+      "base": "aah",
+      "size": 1,
+      "words": [
+        "aah"
+      ]
+    },
+    {
+      "base": "aalborg",
+      "size": 1,
+      "words": [
+        "aalborg"
+      ]
+    },
+    {
+      "base": "aalii",
+      "size": 1,
+      "words": [
+        "aalii"
+      ]
+    },
+    {
+      "base": "aalst",
+      "size": 1,
+      "words": [
+        "aalst"
+      ]
+    },
+    {
+      "base": "aalto",
+      "size": 1,
+      "words": [
+        "aalto"
+      ]
+    },
+    {
+      "base": "aar",
+      "size": 1,
+      "words": [
+        "aar"
+      ]
+    },
+    {
+      "base": "aardvark",
+      "size": 1,
+      "words": [
+        "aardvark"
+      ]
+    },
+    {
+      "base": "aardwolf",
+      "size": 1,
+      "words": [
+        "aardwolf"
+      ]
+    },
+    {
+      "base": "aare",
+      "size": 1,
+      "words": [
+        "aare"
+      ]
+    },
+    {
+      "base": "aarhus",
+      "size": 1,
+      "words": [
+        "aarhus"
+      ]
+    },
+    {
+      "base": "aaron",
+      "size": 1,
+      "words": [
+        "aaron"
+      ]
+    },
+    {
+      "base": "aarp",
+      "size": 1,
+      "words": [
+        "aarp"
+      ]
+    },
+    {
+      "base": "aas",
+      "size": 1,
+      "words": [
+        "aas"
+      ]
+    },
+    {
+      "base": "aave",
+      "size": 1,
+      "words": [
+        "aave"
+      ]
+    },
+    {
+      "base": "ab",
+      "size": 1,
+      "words": [
+        "ab"
+      ]
+    },
+    {
+      "base": "aba",
+      "size": 1,
+      "words": [
+        "aba"
+      ]
+    },
+    {
+      "base": "abaca",
+      "size": 1,
+      "words": [
+        "abaca"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+priority,rule,suffix,replacement,description,examples
+1,iness_to_y,iness,y,Reverse iness to y.,happiness->happy | airiness->airy
+2,iest_to_y,iest,y,Reverse iest to y.,happiest->happy | easiest->easy
+3,ier_to_y,ier,y,Reverse ier to y.,happier->happy | earlier->early
+4,ied_to_ie,ied,ie,Reverse ied to ie.,tied->tie | untied->untie
+5,ied_to_y,ied,y,Reverse ied to y.,studied->study | tried->try
+6,ies_to_ie,ies,ie,Reverse ies to ie.,ties->tie | unties->untie
+7,ies_to_y,ies,y,Reverse ies to y.,studies->study | tries->try
+8,ily_to_y,ily,y,Reverse ily to y.,easily->easy | happily->happy
+9,ying_to_ie,ying,ie,Reverse ying to ie.,tying->tie | dying->die
+10,king_to_c,cking,c,Reverse c->ck before ing.,panicking->panic | mimicking->mimic
+11,ing_undouble,ing,undouble consonant,Reverse doubled-consonant ing.,running->run | stopping->stop
+12,ing_add_e,ing,+e,Restore final e after ing.,making->make | driving->drive
+13,ing_strip,ing,,Plain ing removal.,jumping->jump | reading->read
+14,ked_to_c,cked,c,Reverse c->ck before ed.,panicked->panic | frolicked->frolic
+15,ed_undouble,ed,undouble consonant,Reverse doubled-consonant ed.,stopped->stop | planned->plan
+16,ed_add_e,ed,+e,Restore final e after ed.,loved->love | baked->bake
+17,ed_strip,ed,,Plain ed removal.,marked->mark | called->call
+18,ker_to_c,cker,c,Reverse c->ck before er.,panicker->panic | mimicker->mimic
+19,er_undouble,er,undouble consonant,Reverse doubled-consonant er.,runner->run | bigger->big
+20,er_add_e,er,+e,Restore final e after er.,closer->close | admirer->admire
+21,er_strip,er,,Plain er removal.,player->play | teacher->teach
+22,est_undouble,est,undouble consonant,Reverse doubled-consonant est.,biggest->big | fattest->fat
+23,est_add_e,est,+e,Restore final e after est.,nicest->nice | largest->large
+24,est_strip,est,,Plain est removal.,darkest->dark | fastest->fast
+25,ves_to_f,ves,f,Reverse ves to f.,wolves->wolf | leaves->leaf
+26,ves_to_fe,ves,fe,Reverse ves to fe.,knives->knife | wives->wife
+27,men_to_man,men,man,Reverse men to man.,firemen->fireman | policemen->policeman
+28,ses_to_sis,ses,sis,Reverse ses to sis.,analyses->analysis | crises->crisis
+29,ices_to_ex,ices,ex,Reverse ices to ex.,indices->index | vertices->vertex
+30,ices_to_ix,ices,ix,Reverse ices to ix.,appendices->appendix | matrices->matrix
+31,i_to_us,i,us,Reverse i to us.,cacti->cactus | stimuli->stimulus
+32,a_to_um,a,um,Reverse a to um.,data->datum | bacteria->bacterium
+33,a_to_on,a,on,Reverse a to on.,phenomena->phenomenon | criteria->criterion
+34,ae_to_a,ae,a,Reverse ae to a.,formulae->formula | larvae->larva
+35,ability_to_able,ability,able,Reverse ability to able.,ability->able | adaptability->adaptable
+36,ibility_to_ible,ibility,ible,Reverse ibility to ible.,possibility->possible | flexibility->flexible
+37,ity_to_e,ity,e,Reverse ity to e.,activity->active | sensitivity->sensitive
+38,ity_strip,ity,,Plain ity removal when valid.,fecundity->fecund | morbidity->morbid
+39,ization_to_ize,ization,ize,Reverse ization to ize.,realization->realize | organization->organize
+40,isation_to_ise,isation,ise,Reverse isation to ise.,organisation->organise | civilisation->civilise
+41,ized_to_ize,ized,ize,Reverse ized to ize.,realized->realize | organized->organize
+42,ised_to_ise,ised,ise,Reverse ised to ise.,organised->organise | civilised->civilise
+43,izing_to_ize,izing,ize,Reverse izing to ize.,realizing->realize | organizing->organize
+44,ising_to_ise,ising,ise,Reverse ising to ise.,organising->organise | civilising->civilise
+45,izer_to_ize,izer,ize,Reverse izer to ize.,organizer->organize | realizer->realize
+46,iser_to_ise,iser,ise,Reverse iser to ise.,organiser->organise | advertiser->advertise
+47,ation_to_ate,ation,ate,Reverse ation to ate.,activation->activate | creation->create
+48,ness_strip,ness,,Remove ness.,kindness->kind | sadness->sad
+49,ment_strip,ment,,Remove ment.,development->develop | agreement->agree
+50,ship_strip,ship,,Remove ship.,friendship->friend | leadership->leader
+51,hood_strip,hood,,Remove hood.,childhood->child | brotherhood->brother
+52,dom_strip,dom,,Remove dom.,freedom->free | kingdom->king
+53,ful_strip,ful,,Remove ful.,hopeful->hope | careful->care
+54,less_strip,less,,Remove less.,hopeless->hope | careless->care
+55,ical_to_ic,ical,ic,Reverse ical to ic.,logical->logic | magical->magic
+56,ably_to_able,ably,able,Reverse ably to able.,notably->notable | comfortably->comfortable
+57,ibly_to_ible,ibly,ible,Reverse ibly to ible.,possibly->possible | visibly->visible
+58,eaux_to_eau,eaux,eau,Reverse eaux to eau.,tableaux->tableau | bureaux->bureau
+59,icity_to_ic,icity,ic,Reverse icity to ic.,electricity->electric | authenticity->authentic
+60,osity_to_ous,osity,ous,Reverse osity to ous.,curiosity->curious | generosity->generous
+61,ality_to_al,ality,al,Reverse ality to al.,normality->normal | formality->formal
+62,ivity_to_ive,ivity,ive,Reverse ivity to ive.,productivity->productive | creativity->creative
+63,ousness_to_ous,ousness,ous,Reverse ousness to ous.,graciousness->gracious | seriousness->serious
+64,fulness_to_ful,fulness,ful,Reverse fulness to ful.,helpfulness->helpful | carefulness->careful
+65,lessness_to_less,lessness,less,Reverse lessness to less.,carelessness->careless | hopelessness->hopeless
+66,ance_strip,ance,,Remove ance.,performance->perform | attendance->attend
+67,ence_strip,ence,,Remove ence.,existence->exist | difference->differ
+68,ism_strip,ism,,Remove ism.,realism->real | idealism->ideal
+69,ist_strip,ist,,Remove ist.,artist->art | novelist->novel
+70,age_strip,age,,Remove age.,postage->post | breakage->break
+71,ee_strip,ee,,Remove ee.,employee->employ | escapee->escape
+72,or_strip,or,,Remove or.,actor->act | sailor->sail
+73,ster_strip,ster,,Remove ster.,youngster->young | songster->song
+74,ling_strip,ling,,Remove ling.,duckling->duck | gosling->goose
+75,let_strip,let,,Remove let.,booklet->book | leaflet->leaf
+76,en_strip,en,,Remove en.,wooden->wood | golden->gold
+77,ward_strip,ward,,Remove ward.,homeward->home | eastward->east
+78,wise_strip,wise,,Remove wise.,clockwise->clock | moneywise->money
+79,ically_to_ical,ically,ical,Reverse ically to ical.,magically->magical | logically->logical
+80,ally_to_al,ally,al,Reverse ally to al.,formally->formal | accidentally->accidental
+81,ally_to_ic,ally,ic,Reverse ally to ic.,basically->basic | logically->logic
+82,able_add_e,able,+e,Restore final e after able.,lovable->love | blamable->blame
+83,able_strip,able,,Remove able.,readable->read | adaptable->adapt
+84,ible_strip,ible,,Remove ible.,accessible->access | digestible->digest
+85,ion_strip,ion,,Remove ion when valid.,adoption->adopt | action->act
+86,tion_to_t,tion,t,Reverse tion to t.,action->act | adoption->adopt
+87,tion_to_te,tion,te,Reverse tion to te.,relation->relate | deletion->delete
+88,sion_to_se,sion,se,Reverse sion to se.,revision->revise | explosion->explode?
+89,sion_to_de,sion,de,Reverse sion to de.,decision->decide | division->divide
+90,al_strip,al,,Remove al.,national->nation | formal->form
+91,ic_strip,ic,,Remove ic.,heroic->hero | atomic->atom
+92,ous_strip,ous,,Remove ous.,dangerous->danger | poisonous->poison
+93,ious_to_y,ious,y,Reverse ious to y.,mysterious->mystery | injurious->injury
+94,eous_to_e,eous,e,Reverse eous to e.,advantageous->advantage | outrageous->outrage
+95,ary_strip,ary,,Remove ary.,planetary->planet | imaginary->imagine?
+96,ant_strip,ant,,Remove ant.,assistant->assist | claimant->claim
+97,ent_strip,ent,,Remove ent.,dependent->depend | resident->reside
+98,ly_strip,ly,,Remove ly.,quickly->quick | calmly->calm
+99,es_strip,es,,Remove es when valid.,wishes->wish | goes->go
+100,s_strip,s,,Remove s when valid.,runs->run | cats->cat
+101,identity,,,Keep the word unchanged.,run->run | happy->happy
