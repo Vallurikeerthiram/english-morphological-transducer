@@ -1,225 +1,87 @@
-# English Morphological Transducer & Base Word Extractor
+# English Morphological Transducer & Lexical Analyzer
 
-## 🎯 What is This Project?
+A comprehensive **Automated English Base-Word Extractor** that implements concepts from **Compiler Design** (Finite State Automata) and **Natural Language Processing** (Morphology).
 
-This is a comprehensive **morphological analysis system** for English that implements advanced natural language processing techniques to extract base words from derived forms. The system combines **Finite State Transducers (FST)** with **Trie-based validation** to perform rule-based morphological parsing.
+## 🎯 Overview
 
-### Core Functionality
-- **Morphological Analysis**: Takes inflected/derived words (e.g., "running", "happiest", "studies") and extracts their root/base forms ("run", "happy", "study")
-- **Rule-Based Processing**: Uses 101 carefully crafted morphological transformation rules
-- **Validation**: Ensures extracted base words exist in a dictionary using efficient trie data structures
-- **Interactive Web Interface**: User-friendly tool for real-time morphological analysis
+This project provides a robust system for performing morphological analysis on English words. It uses a **Finite State Transducer (FST)** to apply over 101 rules (handling plurals, past tense, superlatives, etc.) and validates the resulting "base word" against a **Deterministic Finite Automaton (DFA)** built from a 370k+ word English dictionary.
 
-## 🧩 What Problem Does It Solve?
-
-### The Morphological Analysis Challenge
-English morphology is complex and irregular. Words change forms through:
-- **Inflection**: happy → happier → happiest
-- **Derivation**: happy → happiness → happily
-- **Spelling Changes**: happy → happier (y→ier)
-- **Irregular Forms**: good → better (not "gooder")
-
-Traditional approaches struggle with:
-- **Spelling alternations** (y/i changes, doubling rules)
-- **Silent-e rules** (hope → hoping vs. hop → hopping)
-- **Irregular exceptions** (go → went, not "goed")
-- **Ambiguity resolution** (multiple possible base forms)
-
-### Our Solution
-This project provides a **practical morphological analyzer** that:
-- Handles 101+ morphological patterns systematically
-- Prioritizes rules to avoid over-application
-- Validates results against real dictionary words
-- Provides visual feedback and explanations
-
-## 🚀 What's New & Innovative?
-
-### Advanced Rule Architecture
-- **Layered Rule Application**: Rules are organized in priority layers to prevent conflicts
-- **Context-Aware Transformations**: Handles spelling changes, silent-e rules, and consonant doubling
-- **Comprehensive Coverage**: 101 rules covering inflectional, derivational, and irregular morphology
-
-### Technical Innovations
-- **Hybrid FST-Trie Approach**: Combines rule-based FST with dictionary validation
-- **Web Interface**: Interactive analysis with immediate visual feedback
-- **Graph Visualization**: See morphological transformation paths
-- **Dual Analysis Modes**: Default dictionary vs. custom dictionary analysis
-- **REST API**: Programmatic access via FastAPI-based REST endpoints
-
-### Educational Value
-- **Complete Documentation**: Every rule is documented with examples
-- **Academic Implementation**: Demonstrates compiler design concepts in NLP
-- **Open-Source Reference**: Comprehensive morphological rule catalog
-
-## 📋 Prerequisites
-
-- **Web Browser**: Modern browser with JavaScript enabled (Chrome, Firefox, Safari, Edge)
-- **No Server Required**: Runs entirely in the browser
-- **No Dependencies**: Self-contained HTML/CSS/JS application
-
-## 🏃‍♂️ How to Run It
-
-### Quick Start
-1. **Download/Clone** this repository
-2. **Navigate** to the `project/` directory
-3. **Open** `index.html` in your web browser
-4. **Start analyzing** words immediately!
-
-### Detailed Steps
-```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/english-morphological-transducer.git
-cd english-morphological-transducer/project
-
-# Open in browser (or double-click index.html)
-# The application runs entirely in your browser
-```
-
-## 📖 How to Use It
-
-### Two Analysis Modes
-
-#### Model 1: Auto FST (Default Dictionary)
-- **Best for**: General morphological analysis
-- **Dictionary**: Pre-loaded with 3,000+ common English words
-- **Process**:
-  1. Type a derived word (e.g., "running", "happiest", "studies")
-  2. System applies FST rules in priority order
-  3. Validates base word against dictionary trie
-  4. Shows transformation path and result
-
-#### Model 2: Manual FST (Custom Dictionary)
-- **Best for**: Domain-specific analysis or testing
-- **Dictionary**: User-defined word list
-- **Process**:
-  1. Enter comma-separated dictionary words
-  2. Click "Build Trie (DFA)" to create validation structure
-  3. Enter test word for analysis
-  4. System finds base forms within your custom vocabulary
-
-### Example Usage
-
-**Input Word**: `happiest`
-**Analysis**:
-1. Rule `iest → y` applied: `happiest` → `happyest` (invalid)
-2. Rule `est → ''` applied: `happyest` → `happy` (valid!)
-3. **Result**: Base word = `happy`
-
-**Input Word**: `running`
-**Analysis**:
-1. Rule `ing → ''` with undoubling: `running` → `runing` (invalid)
-2. Rule `ing → ''` with silent-e: `runing` → `run` (valid!)
-3. **Result**: Base word = `run`
-
-## � REST API
-
-For programmatic access, this project includes a complete REST API built with FastAPI.
-
-### Quick API Start
-
-```bash
-cd api
-pip install -r requirements.txt
-python api.py
-```
-
-**API Endpoints:**
-- `GET /analyze?word=running` - Analyze single word
-- `POST /analyze/batch` - Analyze multiple words
-- `GET /dictionary` - Get dictionary info
-- `POST /dictionary/update` - Add custom words
-
-**Interactive Documentation:** `http://localhost:8000/docs`
-
-### API Example
-
-```bash
-# Analyze a word
-curl "http://localhost:8000/analyze?word=running"
-
-# Response
-{
-  "input_word": "running",
-  "base_word": "run",
-  "rule_applied": "ing -> '' + Undouble",
-  "found_in_dictionary": true,
-  "candidates_checked": 8,
-  "dictionary_size": 370105
-}
-```
-
-See `api/README.md` for complete API documentation.
-
-## �🏗️ Project Structure
-
-```
-main/
-├── ENGLISH_MORPHOLOGY_RULE_NOTE.md    # Complete rule documentation (101 rules)
-├── README.md                          # This file
-├── api/                               # REST API for morphological analysis
-│   ├── __init__.py
-│   ├── api.py                         # FastAPI application
-│   ├── morphological_analyzer.py      # Core analysis engine
-│   ├── morphological_rules.py         # FST rules implementation
-│   ├── trie.py                        # Trie data structure
-│   ├── requirements.txt               # Python dependencies
-│   └── README.md                      # API documentation
-└── project/
-    ├── index.html                     # Main web interface
-    ├── script.js                      # Morphological analysis engine
-    ├── style.css                      # UI styling
-    ├── test_logic_runner.js           # Testing utilities
-    └── words_alpha.txt                # Default dictionary (3K+ words)
-```
-
-## 🔧 Technical Implementation
-
-### Morphological Rules (101 Total)
-- **Y/I Alternations**: happiest → happy, studies → study
-- **Progressive/Past**: running → run, walked → walk
-- **Comparative/Superlative**: bigger → big, fastest → fast
-- **Plurals**: knives → knife, children → child
-- **Derivational**: happiness → happy, creation → create
-- **Irregular Forms**: went → go, better → good
-
-### Algorithm Flow
-1. **Input Processing**: Word segmentation and normalization
-2. **Rule Application**: Layered FST transformation (priority-based)
-3. **Validation**: Trie lookup for base word existence
-4. **Output**: Base word + transformation explanation
-
-### Performance
-- **Rule Processing**: O(n) where n = word length
-- **Trie Validation**: O(m) where m = base word length
-- **Dictionary Size**: 3,000+ words, ~O(1) lookup
-- **Browser-Based**: No server overhead
-
-## 🎓 Academic Context
-
-This project demonstrates **Compiler Design** principles applied to **Natural Language Processing**:
-
-- **Finite State Transducers**: Rule-based morphological parsing
-- **Trie Data Structures**: Efficient dictionary validation
-- **Algorithm Design**: Priority-based rule application
-- **User Interface Design**: Educational tool development
-
-## 🤝 Contributing
-
-1. **Study** the rule documentation in `ENGLISH_MORPHOLOGY_RULE_NOTE.md`
-2. **Test** new words and edge cases
-3. **Propose** additional morphological rules
-4. **Improve** the web interface or algorithms
-
-## 📄 License
-
-This project is open-source and available under the MIT License.
-
-## 🙏 Acknowledgments
-
-- **Compiler Design Course**: For providing the academic framework
-- **English Morphology Research**: For the comprehensive rule catalog
-- **Open-Source Community**: For JavaScript libraries and inspiration
+### Key Features
+- **Rule-Based FST Engine:** 101+ prioritized morphological rules.
+- **DFA Implementation:** High-performance Trie-based word validation.
+- **3D Cinematic Visualization:** Physics-based nodal transitions using `vis-network` with cinematic "fly-to" camera focus.
+- **Lexical Analysis:** Automatic retrieval of Part of Speech (POS) and dictionary definitions for extracted roots.
+- **Suppletion Support:** Handles irregular words like *went -> go* or *better -> good*.
 
 ---
 
-**Ready to explore English morphology?** Open `project/index.html` and start analyzing words!
+## 🛠️ How It Works (The Compiler Perspective)
+
+The system functions like a **Lexical Scanner** for a compiler, breaking down complex tokens (derived words) into their primitive lexemes (base words).
+
+### 1. The Finite State Transducer (FST)
+The FST acts as the **Pre-processor**. It identifies suffixes and applies transformations:
+- **Transform:** *happiest* $\rightarrow$ *happy*
+- **Consonant Undoubling:** *running* $\rightarrow$ *run*
+- **Silent-E Restoration:** *loving* $\rightarrow$ *love*
+
+### 2. The DFA (Trie Data Structure)
+The **Lexical Analyzer** phase involves traversing a DFA constructed from the dictionary.
+- **States:** Every node is a state representing a prefix.
+- **Transitions:** Every character is an alphabet transition.
+- **Accept States:** Nodes marked in **Green** represent valid English words.
+
+### 3. Traversal & Validation
+For every candidate generated by the FST, the system walks the DFA:
+1. Start at the **ROOT**.
+2. Transition state-by-state for each character in the candidate.
+3. If the final state is an **Accept State**, the root is validated.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- **Python 3.x** (for the local server)
+
+### Installation & Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Vallurikeerthiram/english-morphological-transducer.git
+   cd english-morphological-transducer
+   ```
+2. Run the application:
+   - **Windows:** Double-click the `run.bat` file.
+   - **Manual:**
+     ```bash
+     cd main/project
+     python -m http.server 8181
+     ```
+3. Open your browser to `http://localhost:8181`.
+
+---
+
+## 🎨 Visualization Guide
+- **Blue Node:** The Root (START) of the machine.
+- **Red/Yellow Path:** The active sequence of states being analyzed.
+- **Grey Nodes:** Inactive neighbors (other possible words in the lexicon).
+- **Green Nodes:** Accept States (Valid base words).
+- **Cinematic Camera:** The view will automatically "Fly-to" and focus on the final state when a word is successfully validated.
+
+---
+
+## 📚 Technical Stack
+- **Frontend:** Vanilla JavaScript (ES6+), CSS3 (Keyframe Animations).
+- **Visualization:** `vis-network` (Physics-based Graphing).
+- **Data Structures:** Deterministic Finite Automaton (Trie), Finite State Transducer (Rule-based).
+- **External API:** [Free Dictionary API](https://dictionaryapi.dev/) for lexical meanings.
+
+---
+
+## 📝 License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+**Developed for Compiler Design Research (Sem 6)**
+*Author: Valluri Keerthi Ram*
