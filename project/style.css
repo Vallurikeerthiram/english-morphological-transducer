@@ -155,7 +155,11 @@ input:disabled {
     border-radius: 6px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.action-btn:active {
+    transform: scale(0.96);
 }
 
 .action-btn:hover {
@@ -220,6 +224,13 @@ input:disabled {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.result-display.error {
+    color: var(--error-color);
+    background: #fdf2f2;
+    border: 1px solid #f8d7da;
 }
 
 .visualization-area {
@@ -266,9 +277,10 @@ input:disabled {
 }
 
 .dot.root { background-color: #97c2fc; border: 2px solid #2b7ce9; }
-.dot.state { background-color: #fb7e81; border: 2px solid #fa0a10; }
+.dot.current { background-color: #fb7e81; border: 2px solid #fa0a10; }
+.dot.state { background-color: #e0e0e0; border: 2px solid #a0a0a0; }
 .dot.accept { background-color: #7be141; border: 2px solid #41a906; }
-.dot.current { background-color: #ffff00; border: 2px solid #ff9900; }
+.dot.result { background-color: #ffff00; border: 2px solid #ff9900; }
 
 .meaning-box {
     border-top: 1px solid var(--border-color);
@@ -310,9 +322,8 @@ input:disabled {
 
 #network-container {
     flex: 1;
-    min-height: 500px; /* Ensure a minimum height for vis.js */
+    min-height: 500px;
     background-color: #fff;
-    /* Background pattern for grid */
     background-image: linear-gradient(var(--border-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
     background-size: 20px 20px;

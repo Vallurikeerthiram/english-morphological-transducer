@@ -1,0 +1,474 @@
+{
+  "lexicon_size": 478569,
+  "group_count": 351552,
+  "source_counts": {
+    "wordnet_words": 77477,
+    "web2_words": 234422,
+    "gcide_words": 105308,
+    "wordfreq_words": 288387,
+    "defined_words": 77477,
+    "undefined_words": 401092
+  },
+  "top_selected_rules": [
+    [
+      "identity",
+      351539
+    ],
+    [
+      "s_strip",
+      32293
+    ],
+    [
+      "ly_strip",
+      7651
+    ],
+    [
+      "er_strip",
+      5855
+    ],
+    [
+      "ed_strip",
+      5278
+    ],
+    [
+      "ing_strip",
+      5096
+    ],
+    [
+      "ness_strip",
+      4923
+    ],
+    [
+      "ed_add_e",
+      4550
+    ],
+    [
+      "ing_add_e",
+      3277
+    ],
+    [
+      "er_add_e",
+      3189
+    ],
+    [
+      "ic_strip",
+      2903
+    ],
+    [
+      "es_strip",
+      2595
+    ],
+    [
+      "ism_strip",
+      2417
+    ],
+    [
+      "ation_to_ate",
+      1997
+    ],
+    [
+      "ist_strip",
+      1891
+    ]
+  ],
+  "top_valid_candidate_rules": [
+    [
+      "s_strip",
+      33657
+    ],
+    [
+      "er_strip",
+      8136
+    ],
+    [
+      "ly_strip",
+      7790
+    ],
+    [
+      "ed_strip",
+      6775
+    ],
+    [
+      "ing_strip",
+      6537
+    ],
+    [
+      "ed_add_e",
+      5486
+    ],
+    [
+      "ness_strip",
+      5079
+    ],
+    [
+      "er_add_e",
+      4860
+    ],
+    [
+      "ing_add_e",
+      4418
+    ],
+    [
+      "es_strip",
+      4312
+    ],
+    [
+      "ic_strip",
+      2903
+    ],
+    [
+      "ism_strip",
+      2417
+    ],
+    [
+      "ation_to_ate",
+      2015
+    ],
+    [
+      "able_strip",
+      1939
+    ],
+    [
+      "ist_strip",
+      1891
+    ]
+  ],
+  "sample_resolutions": [
+    {
+      "word": "happy",
+      "final_base": "happy",
+      "rule_chain": [
+        "identity"
+      ],
+      "path": [
+        "happy"
+      ]
+    },
+    {
+      "word": "happier",
+      "final_base": "happy",
+      "rule_chain": [
+        "ier_to_y"
+      ],
+      "path": [
+        "happier->happy"
+      ]
+    },
+    {
+      "word": "happiest",
+      "final_base": "happy",
+      "rule_chain": [
+        "iest_to_y"
+      ],
+      "path": [
+        "happiest->happy"
+      ]
+    },
+    {
+      "word": "happiness",
+      "final_base": "happy",
+      "rule_chain": [
+        "iness_to_y"
+      ],
+      "path": [
+        "happiness->happy"
+      ]
+    },
+    {
+      "word": "run",
+      "final_base": "run",
+      "rule_chain": [
+        "identity"
+      ],
+      "path": [
+        "run"
+      ]
+    },
+    {
+      "word": "running",
+      "final_base": "run",
+      "rule_chain": [
+        "ing_undouble"
+      ],
+      "path": [
+        "running->run"
+      ]
+    },
+    {
+      "word": "runner",
+      "final_base": "run",
+      "rule_chain": [
+        "er_undouble"
+      ],
+      "path": [
+        "runner->run"
+      ]
+    },
+    {
+      "word": "study",
+      "final_base": "study",
+      "rule_chain": [
+        "identity"
+      ],
+      "path": [
+        "study"
+      ]
+    },
+    {
+      "word": "studies",
+      "final_base": "study",
+      "rule_chain": [
+        "ies_to_y"
+      ],
+      "path": [
+        "studies->study"
+      ]
+    },
+    {
+      "word": "studied",
+      "final_base": "study",
+      "rule_chain": [
+        "ied_to_y"
+      ],
+      "path": [
+        "studied->study"
+      ]
+    },
+    {
+      "word": "making",
+      "final_base": "make",
+      "rule_chain": [
+        "ing_add_e"
+      ],
+      "path": [
+        "making->make"
+      ]
+    },
+    {
+      "word": "easily",
+      "final_base": "easy",
+      "rule_chain": [
+        "ily_to_y"
+      ],
+      "path": [
+        "easily->easy"
+      ]
+    },
+    {
+      "word": "ties",
+      "final_base": "tie",
+      "rule_chain": [
+        "s_strip"
+      ],
+      "path": [
+        "ties->tie"
+      ]
+    },
+    {
+      "word": "tying",
+      "final_base": "tie",
+      "rule_chain": [
+        "ying_to_ie"
+      ],
+      "path": [
+        "tying->tie"
+      ]
+    },
+    {
+      "word": "panicked",
+      "final_base": "panic",
+      "rule_chain": [
+        "ked_to_c"
+      ],
+      "path": [
+        "panicked->panic"
+      ]
+    },
+    {
+      "word": "wolves",
+      "final_base": "wolf",
+      "rule_chain": [
+        "ves_to_f"
+      ],
+      "path": [
+        "wolves->wolf"
+      ]
+    },
+    {
+      "word": "analyses",
+      "final_base": "analysis",
+      "rule_chain": [
+        "ses_to_sis"
+      ],
+      "path": [
+        "analyses->analysis"
+      ]
+    },
+    {
+      "word": "realization",
+      "final_base": "realize",
+      "rule_chain": [
+        "ization_to_ize"
+      ],
+      "path": [
+        "realization->realize"
+      ]
+    },
+    {
+      "word": "ability",
+      "final_base": "able",
+      "rule_chain": [
+        "ability_to_able"
+      ],
+      "path": [
+        "ability->able"
+      ]
+    }
+  ],
+  "rule_count": 101,
+  "preview_groups": [
+    {
+      "base": "aa",
+      "size": 1,
+      "words": [
+        "aa"
+      ]
+    },
+    {
+      "base": "aaa",
+      "size": 2,
+      "words": [
+        "aaa",
+        "aaas"
+      ]
+    },
+    {
+      "base": "aaagh",
+      "size": 1,
+      "words": [
+        "aaagh"
+      ]
+    },
+    {
+      "base": "aaah",
+      "size": 1,
+      "words": [
+        "aaah"
+      ]
+    },
+    {
+      "base": "aaahh",
+      "size": 1,
+      "words": [
+        "aaahh"
+      ]
+    },
+    {
+      "base": "aaahhh",
+      "size": 1,
+      "words": [
+        "aaahhh"
+      ]
+    },
+    {
+      "base": "aaai",
+      "size": 1,
+      "words": [
+        "aaai"
+      ]
+    },
+    {
+      "base": "aaam",
+      "size": 1,
+      "words": [
+        "aaam"
+      ]
+    },
+    {
+      "base": "aaand",
+      "size": 1,
+      "words": [
+        "aaand"
+      ]
+    },
+    {
+      "base": "aaargh",
+      "size": 1,
+      "words": [
+        "aaargh"
+      ]
+    },
+    {
+      "base": "aaaw",
+      "size": 1,
+      "words": [
+        "aaaw"
+      ]
+    },
+    {
+      "base": "aab",
+      "size": 1,
+      "words": [
+        "aab"
+      ]
+    },
+    {
+      "base": "aaba",
+      "size": 1,
+      "words": [
+        "aaba"
+      ]
+    },
+    {
+      "base": "aabb",
+      "size": 1,
+      "words": [
+        "aabb"
+      ]
+    },
+    {
+      "base": "aabc",
+      "size": 1,
+      "words": [
+        "aabc"
+      ]
+    },
+    {
+      "base": "aabenraa",
+      "size": 1,
+      "words": [
+        "aabenraa"
+      ]
+    },
+    {
+      "base": "aac",
+      "size": 2,
+      "words": [
+        "aac",
+        "aacs"
+      ]
+    },
+    {
+      "base": "aacap",
+      "size": 1,
+      "words": [
+        "aacap"
+      ]
+    },
+    {
+      "base": "aacc",
+      "size": 1,
+      "words": [
+        "aacc"
+      ]
+    },
+    {
+      "base": "aace",
+      "size": 1,
+      "words": [
+        "aace"
+      ]
+    }
+  ],
+  "coverage_note": "This is a very large merged English lexicon from WordNet, WEB2, GCIDE, and wordfreq. It is broad but still not a mathematically complete list of every possible English word."
+}

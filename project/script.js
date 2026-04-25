@@ -1,90 +1,44 @@
 // --- 1. Morphological Transducer (FST) Rule Inventory ---
-// Based on ENGLISH_MORPHOLOGY_RULE_NOTE.md (101 Rules)
-// Prioritized according to Project Documentation Draft: iest > ier > ies > ing > ed > s
-
 const fstRuleLayers = [
-    // LAYER 1: High-priority Superlative/Comparative y-alternations
-    [
-        { suffix: "iness", replace: "y", name: "iness -> y" },
-        { suffix: "iest", replace: "y", name: "iest -> y" },
-        { suffix: "ier", replace: "y", name: "ier -> y" },
-        { suffix: "ily", replace: "y", name: "ily -> y" }
-    ],
-    // LAYER 2: Plurals and y-alternations
-    [
-        { suffix: "ied", replace: "y", name: "ied -> y" },
-        { suffix: "ied", replace: "ie", name: "ied -> ie" },
-        { suffix: "ies", replace: "y", name: "ies -> y" },
-        { suffix: "ies", replace: "ie", name: "ies -> ie" },
-        { suffix: "ying", replace: "ie", name: "ying -> ie" }
-    ],
-    // LAYER 3: Progressive and Past (with undoubling/silent-e)
-    [
-        { suffix: "ing", replace: "", name: "ing -> ''", undouble: true, addE: true },
-        { suffix: "ed", replace: "", name: "ed -> ''", undouble: true, addE: true },
-        { suffix: "king", replace: "c", name: "king -> c" },
-        { suffix: "ked", replace: "c", name: "ked -> c" }
-    ],
-    // LAYER 4: Degree and Plurals
-    [
-        { suffix: "er", replace: "", name: "er -> ''", undouble: true, addE: true },
-        { suffix: "est", replace: "", name: "est -> ''", undouble: true, addE: true },
-        { suffix: "ves", replace: "f", name: "ves -> f" },
-        { suffix: "ves", replace: "fe", name: "ves -> fe" },
-        { suffix: "men", replace: "man", name: "men -> man" },
-        { suffix: "ses", replace: "sis", name: "ses -> sis" }
-    ],
-    // LAYER 5: Core Derivational Reversal
-    [
-        { suffix: "ability", replace: "able", name: "ability -> able" },
-        { suffix: "ibility", replace: "ible", name: "ibility -> ible" },
-        { suffix: "ization", replace: "ize", name: "ization -> ize" },
-        { suffix: "isation", replace: "ise", name: "isation -> ise" },
-        { suffix: "ation", replace: "ate", name: "ation -> ate" },
-        { suffix: "ness", replace: "", name: "ness -> ''" },
-        { suffix: "ment", replace: "", name: "ment -> ''" },
-        { suffix: "ship", replace: "", name: "ship -> ''" },
-        { suffix: "hood", replace: "", name: "hood -> ''" },
-        { suffix: "dom", replace: "", name: "dom -> ''" },
-        { suffix: "fully", replace: "ful", name: "fully -> ful" },
-        { suffix: "ful", replace: "", name: "ful -> ''" },
-        { suffix: "less", replace: "", name: "less -> ''" },
-        { suffix: "ical", replace: "ic", name: "ical -> ic" },
-        { suffix: "ly", replace: "", name: "ly -> ''" },
-        { suffix: "ity", replace: "e", name: "ity -> e" },
-        { suffix: "ity", replace: "", name: "ity -> ''" }
-    ],
-    // LAYER 6: Basic Inflection
-    [
-        { suffix: "es", replace: "", name: "es -> ''" },
-        { suffix: "s", replace: "", name: "s -> ''" }
-    ]
+    [{ suffix: "iness", replace: "y", name: "iness -> y" }, { suffix: "iest", replace: "y", name: "iest -> y" }, { suffix: "ier", replace: "y", name: "ier -> y" }, { suffix: "ily", replace: "y", name: "ily -> y" }],
+    [{ suffix: "ied", replace: "y", name: "ied -> y" }, { suffix: "ied", replace: "ie", name: "ied -> ie" }, { suffix: "ies", replace: "y", name: "ies -> y" }, { suffix: "ies", replace: "ie", name: "ies -> ie" }, { suffix: "ying", replace: "ie", name: "ying -> ie" }],
+    [{ suffix: "ing", replace: "", name: "ing -> ''", undouble: true, addE: true }, { suffix: "ed", replace: "", name: "ed -> ''", undouble: true, addE: true }, { suffix: "king", replace: "c", name: "king -> c" }, { suffix: "ked", replace: "c", name: "ked -> c" }],
+    [{ suffix: "er", replace: "", name: "er -> ''", undouble: true, addE: true }, { suffix: "est", replace: "", name: "est -> ''", undouble: true, addE: true }, { suffix: "ves", replace: "f", name: "ves -> f" }, { suffix: "ves", replace: "fe", name: "ves -> fe" }, { suffix: "men", replace: "man", name: "men -> man" }, { suffix: "ses", replace: "sis", name: "ses -> sis" }, { suffix: "ices", replace: "ex", name: "ices -> ex" }, { suffix: "ices", replace: "ix", name: "ices -> ix" }, { suffix: "i", replace: "us", name: "i -> us" }, { suffix: "a", replace: "um", name: "a -> um" }, { suffix: "a", replace: "on", name: "a -> on" }, { suffix: "ae", replace: "a", name: "ae -> a" }, { suffix: "eaux", replace: "eau", name: "eaux -> eau" }],
+    [{ suffix: "ability", replace: "able", name: "ability -> able" }, { suffix: "ibility", replace: "ible", name: "ibility -> ible" }, { suffix: "ization", replace: "ize", name: "ization -> ize" }, { suffix: "isation", replace: "ise", name: "isation -> ise" }, { suffix: "ized", replace: "ize", name: "ized -> ize" }, { suffix: "ised", replace: "ise", name: "ised -> ise" }, { suffix: "izing", replace: "ize", name: "izing -> ize" }, { suffix: "ising", replace: "ise", name: "ising -> ise" }, { suffix: "izer", replace: "ize", name: "izer -> ize" }, { suffix: "iser", replace: "ise", name: "iser -> ise" }, { suffix: "ation", replace: "ate", name: "ation -> ate" }, { suffix: "ness", replace: "", name: "ness -> ''" }, { suffix: "ment", replace: "", name: "ment -> ''" }, { suffix: "ship", replace: "", name: "ship -> ''" }, { suffix: "hood", replace: "", name: "hood -> ''" }, { suffix: "dom", replace: "", name: "dom -> ''" }, { suffix: "fully", replace: "ful", name: "fully -> ful" }, { suffix: "ful", replace: "", name: "ful -> ''" }, { suffix: "less", replace: "", name: "less -> ''" }, { suffix: "ical", replace: "ic", name: "ical -> ic" }, { suffix: "ably", replace: "able", name: "ably -> able" }, { suffix: "ibly", replace: "ible", name: "ibly -> ible" }, { suffix: "ly", replace: "", name: "ly -> ''" }, { suffix: "ity", replace: "e", name: "ity -> e" }, { suffix: "ity", replace: "", name: "ity -> ''" }],
+    [{ suffix: "icity", replace: "ic", name: "icity -> ic" }, { suffix: "osity", replace: "ous", name: "osity -> ous" }, { suffix: "ality", replace: "al", name: "ality -> al" }, { suffix: "ivity", replace: "ive", name: "ivity -> ive" }, { suffix: "ousness", replace: "ous", name: "ousness -> ous" }, { suffix: "fulness", replace: "ful", name: "fulness -> ful" }, { suffix: "lessness", replace: "less", name: "lessness -> less" }, { suffix: "ance", replace: "", name: "ance -> ''" }, { suffix: "ence", replace: "", name: "ence -> ''" }, { suffix: "ism", replace: "", name: "ism -> ''" }, { suffix: "ist", replace: "", name: "ist -> ''" }, { suffix: "age", replace: "", name: "age -> ''" }, { suffix: "ee", replace: "", name: "ee -> ''" }, { suffix: "or", replace: "", name: "or -> ''" }, { suffix: "ster", replace: "", name: "ster -> ''" }, { suffix: "ling", replace: "", name: "ling -> ''" }, { suffix: "let", replace: "", name: "let -> ''" }, { suffix: "en", replace: "", name: "en -> ''" }, { suffix: "ward", replace: "", name: "ward -> ''" }, { suffix: "wise", replace: "", name: "wise -> ''" }, { suffix: "ically", replace: "ical", name: "ically -> ical" }, { suffix: "ally", replace: "al", name: "ally -> al" }, { suffix: "ally", replace: "ic", name: "ally -> ic" }, { suffix: "able", replace: "", name: "able -> ''", addE: true }, { suffix: "ible", replace: "", name: "ible -> ''" }, { suffix: "ion", replace: "", name: "ion -> ''" }, { suffix: "tion", replace: "t", name: "tion -> t" }, { suffix: "tion", replace: "te", name: "tion -> te" }, { suffix: "sion", replace: "se", name: "sion -> se" }, { suffix: "sion", replace: "de", name: "sion -> de" }, { suffix: "al", replace: "", name: "al -> ''" }, { suffix: "ic", replace: "", name: "ic -> ''" }, { suffix: "ous", replace: "", name: "ous -> ''" }, { suffix: "ious", replace: "y", name: "ious -> y" }, { suffix: "eous", replace: "e", name: "eous -> e" }, { suffix: "ary", replace: "", name: "ary -> ''" }, { suffix: "ant", replace: "", name: "ant -> ''" }, { suffix: "ent", replace: "", name: "ent -> ''" }],
+    [{ suffix: "es", replace: "", name: "es -> ''" }, { suffix: "s", replace: "", name: "s -> ''" }]
 ];
+
+const suppletionMap = {
+    "went": "go", "gone": "go", "was": "be", "were": "be", "is": "be", "am": "be", "are": "be", "been": "be",
+    "has": "have", "had": "have", "does": "do", "did": "do", "done": "do", "made": "make", "took": "take",
+    "taken": "take", "came": "come", "saw": "see", "seen": "see", "ate": "eat", "eaten": "eat", "wrote": "write",
+    "written": "write", "spoke": "speak", "spoken": "speak", "broke": "break", "broken": "break", "drove": "drive",
+    "driven": "drive", "sang": "sing", "sung": "sing", "rang": "ring", "rung": "ring", "drank": "drink",
+    "drunk": "drink", "gave": "give", "given": "give", "knew": "know", "known": "know", "grew": "grow", "grown": "grow",
+    "better": "good", "best": "good", "worse": "bad", "worst": "bad", "farther": "far", "further": "far",
+    "farthest": "far", "furthest": "far", "mice": "mouse", "geese": "goose", "teeth": "tooth", "feet": "foot",
+    "lice": "louse", "people": "person", "children": "child"
+};
 
 function generateCandidates(word, logCallback) {
     let candidates = [];
-    
-    // Identity check - word itself is always a candidate
-    candidates.push({ word: word, rule: "Self" });
-
+    if (suppletionMap[word]) {
+        candidates.push({ word: suppletionMap[word], rule: "Irregular/Suppletion" });
+        if(logCallback) logCallback(`Irregular Match: '${word}' -> '${suppletionMap[word]}'`);
+    }
     for (let layer of fstRuleLayers) {
         for (let rule of layer) {
             if (word.endsWith(rule.suffix) && word.length > rule.suffix.length) {
                 let stem = word.slice(0, -rule.suffix.length);
-                
-                // Base transformation
                 let base = stem + rule.replace;
                 candidates.push({ word: base, rule: rule.name });
                 if(logCallback) logCallback(`Rule Match: '${word}' -> '${base}' (${rule.name})`);
-
-                // Consonant Undoubling (runn-ing -> run)
                 if (rule.undouble && stem.length >= 2 && stem[stem.length-1] === stem[stem.length-2]) {
                     let undoubled = stem.slice(0, -1);
                     candidates.push({ word: undoubled, rule: rule.name + " + Undouble" });
                     if(logCallback) logCallback(`Undouble Rule: '${word}' -> '${undoubled}'`);
                 }
-
-                // Silent E restoration (lov-ing -> love)
                 if (rule.addE) {
                     let withE = stem + "e";
                     candidates.push({ word: withE, rule: rule.name + " + Add-E" });
@@ -93,24 +47,11 @@ function generateCandidates(word, logCallback) {
             }
         }
     }
-    
-    // Sort candidates to keep original prioritized layers
-    // But pseudocode says Identity is usually checked last or prioritized by Trie
-    // We will keep them in the order they were added but move Self to the end if desired.
-    // Documentation says "First valid match (priority-based)".
-    
-    const uniqueCandidates = [];
-    const seen = new Set();
-    for (let c of candidates) {
-        if (!seen.has(c.word)) {
-            uniqueCandidates.push(c);
-            seen.add(c.word);
-        }
-    }
-    
+    candidates.push({ word: word, rule: "Self" });
+    const uniqueCandidates = []; const seen = new Set();
+    for (let c of candidates) { if (!seen.has(c.word)) { uniqueCandidates.push(c); seen.add(c.word); } }
     return uniqueCandidates;
 }
-
 
 // --- 2. Trie Data Structure (DFA) ---
 class TrieNode {
@@ -142,28 +83,15 @@ class Trie {
         }
     }
 
-    search(word, logCallback, highlightCallback) {
+    search(word, logCallback) {
         let current = this.root;
         let pathIds = [current.id];
-        
-        for (let i = 0; i < word.length; i++) {
-            let char = word[i];
-            if (!current.children[char]) {
-                if (logCallback) logCallback(`DFA Trace: No edge for '${char}' from state '${current.char}'`);
-                return { found: false, path: pathIds };
-            }
+        for (let char of word) {
+            if (!current.children[char]) return { found: false, path: pathIds };
             current = current.children[char];
             pathIds.push(current.id);
-            if (highlightCallback) highlightCallback(pathIds);
         }
-        
-        if (current.isEndOfWord) {
-            if (logCallback) logCallback(`DFA Accept: '${word}' reached a final state.`);
-            return { found: true, path: pathIds };
-        } else {
-            if (logCallback) logCallback(`DFA Sink: '${word}' reached a non-accepting state.`);
-            return { found: false, path: pathIds };
-        }
+        return { found: current.isEndOfWord, path: pathIds };
     }
 
     getDynamicDFAView(wordsToTrace) {
@@ -174,12 +102,11 @@ class Trie {
             id: this.root.id, label: this.root.char, level: 0,
             color: { background: '#97c2fc', border: '#2b7ce9' },
             font: { color: '#000', size: 16, face: 'monospace', weight: 'bold' },
-            shape: 'ellipse', borderWidth: 3
+            shape: 'dot', size: 30, borderWidth: 3
         });
 
         const addChildrenToView = (parentNode, level) => {
-            const sortedChars = Object.keys(parentNode.children).sort();
-            for (let char of sortedChars) {
+            for (let char in parentNode.children) {
                 let child = parentNode.children[char];
                 if (!nodesMap.has(child.id)) {
                     nodesMap.set(child.id, {
@@ -188,10 +115,10 @@ class Trie {
                             background: child.isEndOfWord ? '#7be141' : '#e0e0e0',
                             border: child.isEndOfWord ? '#41a906' : '#a0a0a0'
                         },
-                        font: { color: child.isEndOfWord ? '#fff' : '#555', size: 12, face: 'monospace' },
-                        shape: child.isEndOfWord ? 'box' : 'ellipse', borderWidth: 1
+                        font: { color: '#333', size: 14 },
+                        shape: 'dot', size: child.isEndOfWord ? 25 : 20, borderWidth: 2
                     });
-                    edges.push({ from: parentNode.id, to: child.id, arrows: 'to', color: { color: '#cccccc', opacity: 0.5 }, width: 1 });
+                    edges.push({ from: parentNode.id, to: child.id, arrows: 'to', color: { color: '#cccccc', opacity: 0.5 } });
                 }
             }
         };
@@ -200,51 +127,30 @@ class Trie {
 
         wordsToTrace.forEach(word => {
             let current = this.root;
-            let level = 1;
             for (let i = 0; i < word.length; i++) {
                 let char = word[i];
                 if (!current.children[char]) break;
                 let nextNode = current.children[char];
                 nodesMap.set(nextNode.id, {
-                    id: nextNode.id, label: nextNode.char, level: level,
+                    id: nextNode.id, label: nextNode.char, level: i + 1,
                     color: {
                         background: nextNode.isEndOfWord ? '#7be141' : '#fb7e81',
                         border: nextNode.isEndOfWord ? '#41a906' : '#fa0a10'
                     },
-                    font: { color: nextNode.isEndOfWord ? '#fff' : '#000', size: 16, face: 'monospace', weight: 'bold' },
-                    shape: nextNode.isEndOfWord ? 'box' : 'ellipse', borderWidth: 3
+                    font: { color: '#000', size: 18, weight: 'bold' },
+                    shape: 'dot', size: 28, borderWidth: 4
                 });
                 edges.push({ from: current.id, to: nextNode.id, arrows: 'to', color: { color: '#848484', opacity: 1 }, width: 2 });
-                addChildrenToView(nextNode, level + 1);
+                addChildrenToView(nextNode, i + 2);
                 current = nextNode;
-                level++;
             }
         });
 
         return { nodes: Array.from(nodesMap.values()), edges: edges };
     }
-
-    getVisData() {
-        let nodes = [];
-        let edges = [];
-        const traverse = (node, parentId, level = 0) => {
-            nodes.push({
-                id: node.id, label: node.char, level: level,
-                color: { background: node.char === 'START' ? '#97c2fc' : (node.isEndOfWord ? '#7be141' : '#fb7e81'), border: node.char === 'START' ? '#2b7ce9' : (node.isEndOfWord ? '#41a906' : '#fa0a10') },
-                font: { color: (node.char === 'START' || !node.isEndOfWord) ? '#000' : '#fff', size: 14, face: 'monospace' },
-                shape: node.isEndOfWord ? 'box' : 'ellipse', borderWidth: 2
-            });
-            if (parentId) edges.push({ from: parentId, to: node.id, arrows: 'to', color: { color: '#848484', opacity: 0.6 }, width: 1 });
-            const sortedChars = Object.keys(node.children).sort();
-            for (let char of sortedChars) traverse(node.children[char], node.id, level + 1);
-        };
-        traverse(this.root, null);
-        return { nodes, edges };
-    }
 }
 
 // --- 3. UI and Logic Integration ---
-
 let fullDictionaryTrie = new Trie();
 let customDictionaryTrie = new Trie();
 let wordGroups = {};
@@ -266,21 +172,26 @@ function initNetwork(visData) {
     const container = document.getElementById('network-container');
     if (!container) return;
     
-    // Destroy old network to free memory
-    if (network) {
-        network.destroy();
-        network = null;
-    }
+    if (network) network.destroy();
 
     networkNodes = new vis.DataSet(visData.nodes);
     networkEdges = new vis.DataSet(visData.edges);
     
     const options = {
-        layout: { hierarchical: { direction: 'UD', sortMethod: 'directed', nodeSpacing: 120, levelSeparation: 100, parentCentralization: true } },
-        physics: { enabled: false },
+        layout: { hierarchical: { direction: 'UD', sortMethod: 'directed', nodeSpacing: 150, levelSeparation: 120, parentCentralization: true } },
+        physics: { 
+            enabled: true, 
+            hierarchicalRepulsion: { nodeDistance: 160 }, 
+            stabilization: { iterations: 100 } 
+        },
         interaction: { dragNodes: true, zoomView: true, dragView: true, hover: true },
-        nodes: { shadow: true },
-        edges: { smooth: { type: 'cubicBezier', forceDirection: 'vertical', roundness: 0.4 } }
+        nodes: { 
+            shadow: { enabled: true, color: 'rgba(0,0,0,0.3)', size: 10, x: 5, y: 5 }
+        },
+        edges: { 
+            smooth: { type: 'cubicBezier', forceDirection: 'vertical', roundness: 0.5 },
+            shadow: { enabled: true, color: 'rgba(0,0,0,0.1)', size: 5, x: 2, y: 2 }
+        }
     };
     
     network = new vis.Network(container, { nodes: networkNodes, edges: networkEdges }, options);
@@ -290,35 +201,126 @@ async function loadFullDictionary() {
     showLoading(true, "Downloading Lexicon...");
     try {
         const response = await fetch('words_alpha.txt');
-        if (!response.ok) throw new Error("HTTP " + response.status);
         const text = await response.text();
         const words = text.split(/\r?\n/).map(w => w.trim().toLowerCase()).filter(w => w.length > 0);
         
         fullDictionaryTrie = new Trie();
         const total = words.length;
         const chunkSize = 25000;
-        
         for (let i = 0; i < total; i += chunkSize) {
-            const chunk = words.slice(i, i + chunkSize);
-            chunk.forEach(w => fullDictionaryTrie.insert(w));
-            
+            words.slice(i, i + chunkSize).forEach(w => fullDictionaryTrie.insert(w));
             if (i % 50000 === 0) {
-                showLoading(true, `Compiling DFA States: ${Math.round((i/total)*100)}%`);
+                showLoading(true, `Compiling States: ${Math.round((i/total)*100)}%`);
                 await new Promise(r => setTimeout(r, 0));
             }
         }
-        
         initNetwork(fullDictionaryTrie.getDynamicDFAView([]));
         showLoading(false);
-        logToPanel('info', `✅ Compilation Complete: ${fullDictionaryTrie.wordCount.toLocaleString()} states loaded.`);
-    } catch (error) {
-        console.error("Dictionary Load Error:", error);
+    } catch (e) {
         showLoading(false);
-        logToPanel('fail', 'Failed to load dictionary. falling back to sample set.');
-        const fallback = ["happy", "happiness", "run", "running", "study", "studies", "stop", "stopped", "ram", "hconvert"];
+        const fallback = ["happy", "happiness", "run", "running", "study", "studies"];
         fullDictionaryTrie = new Trie();
         fallback.forEach(w => fullDictionaryTrie.insert(w));
-        initNetwork(fullDictionaryTrie.getVisData());
+        initNetwork(fullDictionaryTrie.getDynamicDFAView([]));
+    }
+}
+
+function highlightTriePath(pathIds) {
+    if (!network || !networkNodes) return;
+    const updates = [];
+    networkNodes.getIds().forEach(id => {
+        if (pathIds.includes(id)) {
+            updates.push({ id: id, color: { background: '#ffff00', border: '#f39c12' }, size: 35, font: { size: 22, weight: 'bold' } });
+        }
+    });
+    networkNodes.update(updates);
+    
+    // "Fly" to the final node for a 3D effect
+    const lastId = pathIds[pathIds.length - 1];
+    network.focus(lastId, {
+        scale: 1.2,
+        animation: { duration: 1000, easingFunction: 'easeInOutQuad' }
+    });
+}
+
+function processWord(word, isModel1) {
+    if (!word) {
+        clearLog();
+        document.getElementById('finalResult').innerText = '-';
+        if (document.getElementById('meaningContainer')) document.getElementById('meaningContainer').style.display = 'none';
+        return;
+    }
+    clearLog();
+    const activeTrie = isModel1 ? fullDictionaryTrie : customDictionaryTrie;
+    logToPanel('info', `LEXICAL ANALYSIS: "${word}"`);
+    const candidates = generateCandidates(word, (msg) => logToPanel('candidate', msg));
+    
+    // Update graph dynamically
+    initNetwork(activeTrie.getDynamicDFAView(candidates.map(c => c.word)));
+    
+    let finalBase = word; let found = false;
+    setTimeout(() => {
+        for (let cObj of candidates) {
+            let candidate = cObj.word;
+            logToPanel('check', `Searching DFA for: "${candidate}"`);
+            let res = activeTrie.search(candidate);
+            if (res.found) {
+                finalBase = candidate; found = true;
+                highlightTriePath(res.path);
+                fetchMeaning(candidate);
+                updateWordFamilies(candidate, word);
+                break;
+            }
+        }
+        const finalResEl = document.getElementById('finalResult');
+        finalResEl.innerText = found ? finalBase : `"${word}" (Not Found)`;
+        finalResEl.className = found ? 'result-display pop' : 'result-display error';
+        if (!found) {
+            if (document.getElementById('meaningContainer')) document.getElementById('meaningContainer').style.display = 'none';
+            logToPanel('fail', `Lexical Error: "${word}" has no valid base form.`);
+        }
+    }, 200);
+}
+
+function fetchMeaning(word) {
+    const meaningContainer = document.getElementById('meaningContainer');
+    const definitionEl = document.getElementById('wordDefinition');
+    const posEl = document.getElementById('partOfSpeech');
+    meaningContainer.style.display = 'block';
+    definitionEl.innerText = "Querying Lexicon...";
+    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`).then(r => r.json()).then(data => {
+        const entry = data[0].meanings[0];
+        definitionEl.innerText = entry.definitions[0].definition;
+        posEl.innerText = entry.partOfSpeech;
+        posEl.style.display = 'inline-block';
+    }).catch(() => {
+        definitionEl.innerText = "Definition unavailable.";
+        posEl.style.display = 'none';
+    });
+}
+
+function updateWordFamilies(base, original) {
+    if (!wordGroups[base]) wordGroups[base] = new Set();
+    wordGroups[base].add(original); wordGroups[base].add(base);
+    let familyPanel = document.getElementById('wordFamilyList');
+    if (!familyPanel) {
+        const resultPanel = document.querySelector('.result-panel');
+        const familyHeader = document.createElement('h3');
+        familyHeader.innerHTML = '<i class="fas fa-users"></i> Word Family Grouping';
+        familyHeader.style.marginTop = '20px';
+        familyPanel = document.createElement('div');
+        familyPanel.id = 'wordFamilyList';
+        familyPanel.className = 'log-container';
+        familyPanel.style.backgroundColor = '#fdfdfd'; familyPanel.style.color = '#444'; familyPanel.style.maxHeight = '150px';
+        resultPanel.appendChild(familyHeader); resultPanel.appendChild(familyPanel);
+    }
+    familyPanel.innerHTML = '';
+    for (let b in wordGroups) {
+        let members = Array.from(wordGroups[b]).join(', ');
+        let entry = document.createElement('div');
+        entry.className = 'family-entry'; entry.style.fontSize = '0.8rem'; entry.style.marginBottom = '8px';
+        entry.innerHTML = `<span style="color:#2980b9;font-weight:bold">${b}</span>: {${members}}`;
+        familyPanel.appendChild(entry);
     }
 }
 
@@ -334,161 +336,16 @@ function logToPanel(type, message) {
     panel.scrollTop = panel.scrollHeight;
 }
 
-function highlightTriePath(pathIds) {
-    if (!networkNodes) return;
-    const updateNodes = [];
-    networkNodes.getIds().forEach(id => {
-        const node = networkNodes.get(id);
-        if (!node) return;
-        let bgColor = node.label === 'START' ? '#97c2fc' : (node.shape === 'box' ? '#7be141' : '#fb7e81');
-        if (pathIds.includes(id)) updateNodes.push({id: id, color: {background: '#ffff00', border: '#ff9900'}, borderWidth: 4});
-        else updateNodes.push({id: id, color: {background: bgColor, border: node.color.border || '#000'}, borderWidth: 2});
-    });
-    networkNodes.update(updateNodes);
-}
+function clearLog() { const panel = document.getElementById('processLog'); if (panel) panel.innerHTML = ''; }
 
-async function fetchMeaning(word) {
-    const meaningContainer = document.getElementById('meaningContainer');
-    const definitionEl = document.getElementById('wordDefinition');
-    const posEl = document.getElementById('partOfSpeech');
-    if (!meaningContainer || !definitionEl || !posEl) return;
-    
-    meaningContainer.style.display = 'block';
-    definitionEl.innerText = "Querying WordNet...";
-    posEl.style.display = 'none';
-    
-    try {
-        const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-        if (!response.ok) throw new Error();
-        const data = await response.json();
-        const entry = data[0].meanings[0];
-        definitionEl.innerText = entry.definitions[0].definition;
-        posEl.innerText = entry.partOfSpeech;
-        posEl.style.display = 'inline-block';
-    } catch (e) {
-        definitionEl.innerText = "Base word identified, but definition unavailable in this lexicon.";
-        posEl.style.display = 'none';
-    }
-}
-
-function updateWordFamilies(base, original) {
-    if (!wordGroups[base]) wordGroups[base] = new Set();
-    wordGroups[base].add(original);
-    wordGroups[base].add(base);
-    
-    let familyPanel = document.getElementById('wordFamilyList');
-    if (!familyPanel) {
-        const resultPanel = document.querySelector('.result-panel');
-        const familyHeader = document.createElement('h3');
-        familyHeader.innerHTML = '<i class="fas fa-users"></i> Word Family Grouping';
-        familyHeader.style.marginTop = '20px';
-        familyPanel = document.createElement('div');
-        familyPanel.id = 'wordFamilyList';
-        familyPanel.className = 'log-container';
-        familyPanel.style.backgroundColor = '#fdfdfd'; familyPanel.style.color = '#444'; familyPanel.style.maxHeight = '150px';
-        resultPanel.appendChild(familyHeader);
-        resultPanel.appendChild(familyPanel);
-    }
-    
-    familyPanel.innerHTML = '';
-    for (let b in wordGroups) {
-        let members = Array.from(wordGroups[b]).join(', ');
-        let entry = document.createElement('div');
-        entry.style.fontSize = '0.8rem'; entry.style.marginBottom = '8px';
-        entry.innerHTML = `<span style="color:#2980b9;font-weight:bold">${b}</span>: {${members}}`;
-        familyPanel.appendChild(entry);
-    }
-}
-
-function processWord(word, isModel1) {
-    if (!word) {
-        clearLog();
-        document.getElementById('finalResult').innerText = '-';
-        if (document.getElementById('meaningContainer')) document.getElementById('meaningContainer').style.display = 'none';
-        return;
-    }
-    
-    clearLog();
-    let activeTrie = isModel1 ? fullDictionaryTrie : customDictionaryTrie;
-    
-    if (isModel1 && activeTrie.wordCount === 0) {
-        logToPanel('info', 'Wait: Dictionary still compiling...');
-        return;
-    }
-
-    logToPanel('info', `LEXICAL ANALYSIS: "${word}"`);
-    const candidates = generateCandidates(word, (msg) => logToPanel('candidate', msg));
-    
-    // Update graph with current candidate branches
-    if (isModel1) initNetwork(activeTrie.getDynamicDFAView(candidates.map(c => c.word)));
-    
-    let finalBase = word;
-    let found = false;
-    
-    // Use a slight delay to ensure the network is initialized before we start searching
-    setTimeout(() => {
-        // Try candidates in order
-        for (let candidateObj of candidates) {
-            let candidate = candidateObj.word;
-            logToPanel('check', `Traversing DFA for: "${candidate}"`);
-            let result = activeTrie.search(candidate, (msg) => logToPanel(msg.includes('Failed') ? 'fail' : 'success', msg));
-            if (result.found) {
-                finalBase = candidate;
-                found = true;
-                highlightTriePath(result.path);
-                fetchMeaning(candidate);
-                updateWordFamilies(candidate, word);
-                break;
-            }
-        }
-        document.getElementById('finalResult').innerText = finalBase;
-    }, 50);
-}
-
-window.handleInputModel1 = () => {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => {
-        const val = document.getElementById('wordInput1').value.trim().toLowerCase();
-        processWord(val, true);
-    }, 400);
-};
-
-window.handleInputModel2 = () => {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => {
-        const val = document.getElementById('wordInput2').value.trim().toLowerCase();
-        processWord(val, false);
-    }, 400);
-};
-
+window.handleInputModel1 = () => { clearTimeout(debounceTimer); debounceTimer = setTimeout(() => processWord(document.getElementById('wordInput1').value.trim().toLowerCase(), true), 400); };
+window.handleInputModel2 = () => { clearTimeout(debounceTimer); debounceTimer = setTimeout(() => processWord(document.getElementById('wordInput2').value.trim().toLowerCase(), false), 400); };
 window.switchTab = (tabId) => {
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-    const btn = event.currentTarget;
-    btn.classList.add('active');
     document.getElementById(tabId).classList.add('active');
     currentMode = tabId;
-    if (tabId === 'model1') initNetwork(fullDictionaryTrie.getDynamicDFAView([]));
-    else if (document.getElementById('dictInput').value) buildCustomTrie();
 };
-
-function buildCustomTrie() {
-    const dictStr = document.getElementById('dictInput').value;
-    const words = dictStr.split(',').map(w => w.trim().toLowerCase()).filter(w => w.length > 0);
-    if (words.length === 0) return;
-    customDictionaryTrie = new Trie();
-    words.forEach(word => customDictionaryTrie.insert(word));
-    initNetwork(customDictionaryTrie.getVisData());
-    document.getElementById('wordInput2').disabled = false;
-    logToPanel('info', `Manual Lexicon: ${words.length} entries.`);
-}
-
-function clearLog() {
-    const panel = document.getElementById('processLog');
-    if (panel) panel.innerHTML = '';
-}
-
-window.buildDefaultTrie = () => { if (currentMode === 'model1') loadFullDictionary(); else buildCustomTrie(); };
 
 window.onload = () => {
     let checkVis = setInterval(() => { 
@@ -499,3 +356,14 @@ window.onload = () => {
     }, 100);
     setTimeout(() => clearInterval(checkVis), 10000);
 };
+
+window.buildCustomTrie = () => {
+    const dictStr = document.getElementById('dictInput').value;
+    const words = dictStr.split(',').map(w => w.trim().toLowerCase()).filter(w => w.length > 0);
+    customDictionaryTrie = new Trie();
+    words.forEach(w => customDictionaryTrie.insert(w));
+    initNetwork(customDictionaryTrie.getDynamicDFAView([]));
+    document.getElementById('wordInput2').disabled = false;
+};
+
+window.buildDefaultTrie = () => { loadFullDictionary(); };

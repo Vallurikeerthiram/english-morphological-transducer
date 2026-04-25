@@ -1,0 +1,88 @@
+[
+  {
+    "word": "ability",
+    "final_base": "able",
+    "base_sources": [
+      "gcide",
+      "web2",
+      "wordfreq",
+      "wordnet"
+    ],
+    "rule_chain": [
+      "ability_to_able"
+    ],
+    "path": [
+      "ability->able"
+    ],
+    "base_definitions": [
+      "(usually followed by `to') having the necessary means or skill or know-how or authority to do something",
+      "have the skills and qualifications to do things well",
+      "having a strong healthy body",
+      "having inherent physical or mental ability or capacity"
+    ]
+  },
+  {
+    "word": "flexibility",
+    "final_base": "flexible",
+    "base_sources": [
+      "gcide",
+      "web2",
+      "wordfreq",
+      "wordnet"
+    ],
+    "rule_chain": [
+      "ibility_to_ible"
+    ],
+    "path": [
+      "flexibility->flexible"
+    ],
+    "base_definitions": [
+      "able to adjust readily to different conditions",
+      "able to flex; able to bend easily",
+      "bending and snapping back readily without breaking",
+      "capable of being changed",
+      "making or willing to make concessions"
+    ]
+  },
+  {
+    "word": "possibility",
+    "final_base": "possible",
+    "base_sources": [
+      "gcide",
+      "web2",
+      "wordfreq",
+      "wordnet"
+    ],
+    "rule_chain": [
+      "ibility_to_ible"
+    ],
+    "path": [
+      "possibility->possible"
+    ],
+    "base_definitions": [
+      "an applicant who might be suitable",
+      "capable of happening or existing",
+      "existing in possibility",
+      "something that can be done"
+    ]
+  },
+  {
+    "word": "adaptability",
+    "final_base": "adaptable",
+    "base_sources": [
+      "gcide",
+      "web2",
+      "wordfreq",
+      "wordnet"
+    ],
+    "rule_chain": [
+      "ability_to_able"
+    ],
+    "path": [
+      "adaptability->adaptable"
+    ],
+    "base_definitions": [
+      "capable of adapting (of becoming or being made suitable) to a particular situation or use"
+    ]
+  }
+]
